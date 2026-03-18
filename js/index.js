@@ -1,3 +1,36 @@
+const SUPABASE_URL = "https://hbusfmffwxomklstinpu.supabase.co";
+const SUPABASE_ANON_KEY = "sb_publishable_U-JjUYS5OCq1bhI1se6zUQ_1sZiYj8l";
+
+const supabaseClient = supabase.createClient(SUPABASE_URL, SUPABASE_ANON_KEY);
+
+//Testfunktion:
+async function testTracking() {
+  const payload = {
+    participant_id: crypto.randomUUID(),
+    event_type: "test_click",
+    page: "index",
+    question_id: "q1",
+    is_correct: true,
+    attempts: 1,
+    duration_ms: 4200
+  };
+
+  const { data, error } = await supabaseClient
+    .from("tracking_events")
+    .insert([payload]);
+
+  console.log("DATA:", data);
+  console.log("ERROR:", error);
+
+  if (error) {
+    alert("Fehler: " + error.message);
+    return;
+  }
+
+  alert("Erfolg!");
+}
+//Testfunktion Ende
+
 // Serve an object with this structure in order to generate a quiz page
 // The `correct` key is referential and should not be served
 const quiz = {
