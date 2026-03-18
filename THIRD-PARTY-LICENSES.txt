@@ -1,0 +1,8 @@
+This project uses code from:
+
+Quiz Template by MicahRCM
+https://github.com/MicahRCM/Quiz-Template
+
+License: MIT License
+
+Copyright (c) 2020 Micah
