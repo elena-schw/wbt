@@ -152,8 +152,11 @@ div[contenteditable] {
 .quiz-page-template-container {
     background-color: #f1f9fa;
     padding: 0px;
-    overflow: hidden;
-    height: 100%;
+    /*overflow: hidden; Das ist für kurze Quiz-Fragen sinnvoll, aber nicht, wenn ich auch Content drin habe (verhindert sonst scrollen)
+    height: 100%; */
+    min-height: 100vh;
+    overflow-y: auto;
+    overflow-x: hidden;
 }
 
 .quiz-main-page {
@@ -217,6 +220,7 @@ div[contenteditable] {
     position: relative;
     top: 0px;
     max-width: 700px;
+    margin-bottom: 130px; /* Abstand unten eingefügt*/
 }
 
 .move-container-up {
