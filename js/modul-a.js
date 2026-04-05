@@ -115,6 +115,7 @@ const quiz = {
             `
         },
         {
+            id: "modul_a_q1",
             type: "single",
             question: "Frage 1: Sie binden ein Video ein, möchten aber verhindern, dass der Browser während des Ladevorgangs nur eine schwarze Fläche anzeigt. Welches Attribut müssen Sie nutzen?",
             answers: [
@@ -124,9 +125,11 @@ const quiz = {
             ],
             entered: [],
             correct: "B",
-            locked: false
+            locked: false,
+            attempts: 0
         },
         {
+            id: "modul_a_q2",
             type: "single",
             question: "Frage 2: Was bewirkt die Angabe width=device-width im Viewport-Meta-Tag?",
             answers: [
@@ -136,9 +139,11 @@ const quiz = {
             ],
             entered: [],
             correct: "B",
-            locked: false
+            locked: false,
+            attempts: 0
         },
         {
+            id: "modul_a_q3",
             type: "single",
             question: "Frage 3: Welches Attribut im <video>-Tag ist dafür verantwortlich, dass dem Nutzer Schaltflächen zum Abspielen, Pausieren und zur Lautstärkeregelung angezeigt werden?",
             answers: [
@@ -148,11 +153,14 @@ const quiz = {
             ],
             entered: [],
             correct: "B",
-            locked: false
+            locked: false,
+            attempts: 0
         },
         {
+            id: "modul_a_code",
             type: "content",
             entered: ["gesehen"],
+            codeAttempts: 0,
             content: `
                 <div style="color:#35646b;">
                     <h3 style="color: rgb(56, 189, 207); margin-bottom: 16px;">
@@ -193,6 +201,8 @@ const quiz = {
 
 let currentQuestionIndex = 0;
 
+let questionStartTime = null;
+
 const uniq = (a) => {
     return Array.from(new Set(a));
 }
@@ -216,7 +226,10 @@ function setQuizTitle() {
 }
 
 function loadQuestion(question, initLoad) {
+    questionStartTime = Date.now();
+    
     updateProgressBarStatus();
+    startTaskTimer();
 
     if (question.type === "content") {
         loadContentPage(question);
@@ -238,7 +251,7 @@ function loadContentPage(question) {
     quizQuestionTextDIV.innerHTML = question.content;
 
     if (document.getElementById("run-code")) {
-        initCodeTask();
+        initCodeTask(question);
     }
 }
 
@@ -462,7 +475,7 @@ function showHideContinueButton(question) {
     }
 }
 
-function loadNewQuestion(adjustment) {
+async function loadNewQuestion(adjustment) {
     var currentQuestion = quiz.questions[currentQuestionIndex];
 
     if (adjustment === "next-question-load") {
@@ -472,6 +485,21 @@ function loadNewQuestion(adjustment) {
             }
 
             if (!currentQuestion.locked) {
+                var selected = currentQuestion.entered[0];
+                var correctId = currentQuestion.correct.charCodeAt(0).toString();
+                var isCorrect = selected === correctId;
+
+                currentQuestion.attempts = 1;
+
+                await trackEvent({
+                    event_type: "quiz_answer",
+                    page: "modul_a",
+                    question_id: currentQuestion.id,
+                    is_correct: isCorrect,
+                    attempts: currentQuestion.attempts,
+                    duration_ms: getTaskDurationMs()
+                });
+
                 showAnswerFeedback(currentQuestion);
                 currentQuestion.locked = true;
             }

@@ -1,4 +1,4 @@
-function initCodeTask() {
+function initCodeTask(question) {
     var codeInput = document.getElementById("code-input");
     var preview = document.getElementById("preview");
     var runButton = document.getElementById("run-code");
@@ -21,7 +21,7 @@ function initCodeTask() {
 </body>
 </html>`;
 
-    runButton.onclick = function () {
+    runButton.onclick = async function () {
         var code = codeInput.value;
 
         preview.srcdoc = code;
@@ -30,6 +30,17 @@ function initCodeTask() {
 
         feedback.innerHTML = result.message;
         feedback.style.color = result.isCorrect ? "green" : "red";
+
+        question.codeAttempts = (question.codeAttempts || 0) + 1;
+
+        await trackEvent({
+            event_type: "code_attempt",
+            page: "modul_a",
+            question_id: question.id,
+            is_correct: result.isCorrect,
+            attempts: question.codeAttempts,
+            duration_ms: getTaskDurationMs()
+        });
     };
 }
 
@@ -37,42 +48,34 @@ function checkVideoTaskSolution(code) {
     var lowerCode = code.toLowerCase();
     var errors = [];
 
-    if (!lowerCode.includes("<video")) {
-        errors.push("❌ Es wurde kein &lt;video&gt;-Tag gefunden.");
+    var hasVideoTag = lowerCode.includes("<video");
+    var hasValidSrc =
+        lowerCode.includes('src="lager_rundgang.mp4"') ||
+        lowerCode.includes("src='lager_rundgang.mp4'");
+    var hasControls = lowerCode.includes("controls");
+    var hasValidPoster =
+        lowerCode.includes('poster="vorschau_bild.jpg"') ||
+        lowerCode.includes("poster='vorschau_bild.jpg'");
+    var hasWidth = lowerCode.includes("width=");
+
+    if (!hasVideoTag) {
+        errors.push("❌ Es wurde kein <video>-Tag gefunden.");
     }
 
-    if (!lowerCode.includes('src="lager_rundgang.mp4"') && !lowerCode.includes("src='lager_rundgang.mp4'")) {
+    if (!hasValidSrc) {
         errors.push("❌ Das Attribut src mit lager_rundgang.mp4 fehlt oder ist falsch.");
     }
 
-    if (!lowerCode.includes("controls")) {
+    if (!hasControls) {
         errors.push("❌ Das Attribut controls fehlt.");
     }
 
-    if (
-        !lowerCode.includes('poster="vorschau_bild.jpg"') &&
-        !lowerCode.includes("poster='vorschau_bild.jpg'")
-    ) {
-        errors.push("❌ Das poster-Attribut fehlt oder ist falsch. Verwenden Sie vorschau_bild.jpg.");
+    if (!hasValidPoster) {
+        errors.push("❌ Das poster-Attribut fehlt oder ist falsch.");
     }
 
-    if (!lowerCode.includes("<body")) {
-        errors.push("❌ Der &lt;body&gt;-Bereich fehlt.");
-    }
-
-    if (!lowerCode.includes("<head")) {
-        errors.push("❌ Der &lt;head&gt;-Bereich fehlt.");
-    }
-
-    if (!lowerCode.includes("<title>logistik video</title>")) {
-        errors.push("❌ Der Titel Logistik Video fehlt oder ist falsch.");
-    }
-
-    if (
-        !lowerCode.includes('<meta name="viewport" content="width=device-width, initial-scale=1.0">') &&
-        !lowerCode.includes("<meta name='viewport' content='width=device-width, initial-scale=1.0'>")
-    ) {
-        errors.push("❌ Das Viewport-Meta-Tag fehlt oder ist falsch.");
+    if (!hasWidth) {
+        errors.push("❌ Hinweis: Das Video ist sehr groß. Verwenden Sie zusätzlich das Attribut width.");
     }
 
     if (errors.length === 0) {
