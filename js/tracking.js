@@ -1,3 +1,5 @@
+console.log("tracking.js wurde geladen");
+
 const SUPABASE_URL = "https://hbusfmffwxomklstinpu.supabase.co";
 const SUPABASE_ANON_KEY = "sb_publishable_U-JjUYS5OCq1bhI1se6zUQ_1sZiYj8l";
 
