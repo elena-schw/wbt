@@ -83,7 +83,7 @@ function checkVideoTaskSolution(code) {
 
     // Fehler sammeln (didaktisch wichtig!)
     if (!hasVideoTag) {
-        errors.push("❌ Es wurde kein <video>-Tag gefunden.");
+        errors.push("❌ Es wurde kein video-Tag gefunden.");
     }
 
     if (!hasValidSrc) {

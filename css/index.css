@@ -341,7 +341,7 @@ div[contenteditable] {
 
 .progress-bar-text {
     font-size: 14px;
-    color: #c8e4e8;
+    color: rgb(112, 185, 199);
 }
 
 .quiz-completion-outer-progress-bar {

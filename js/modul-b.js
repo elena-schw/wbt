@@ -1,5 +1,5 @@
 const quiz = {
-    name: "Modul A: HTML-Struktur und Multimedia",
+    name: "Modul B: Erweiterte HTML-Strukturen und Formulare",
     questions: [
         {
             type: "content",
@@ -7,121 +7,103 @@ const quiz = {
             content: `
                 <div style="color:#35646b;">
                     <h2 style="color: rgb(56, 189, 207); margin-bottom: 16px;">
-                        Modul A: HTML-Struktur und Multimedia
+                        Modul B: Erweiterte HTML-Strukturen und Formulare
                     </h2>
 
                     <p style="font-size:16px; margin-bottom:22px;">
-                        In diesem ersten Modul lernen Sie die grundlegende Architektur einer Webseite kennen
-                        und erfahren, wie Sie Multimedia-Inhalte integrieren. Eine moderne Webanwendung wird
-                        aus drei zentralen Komponenten zusammengebaut: HTML für die Struktur, CSS für das Layout
-                        und JavaScript für die Interaktivität.
+                        In diesem Modul vertiefen Sie Ihre HTML-Kenntnisse. Sie lernen, wie Formulare aufgebaut werden
+                        und wie Eingaben bereits mit HTML überprüft werden können.
                     </p>
 
                     <h3 style="color: rgb(56, 189, 207); margin-bottom: 12px;">
-                        1. Theorie: Die Basis der Webentwicklung
+                        1. Theorie: Erweiterte HTML-Konzepte
                     </h3>
 
-                    <h4 style="margin-bottom: 8px;">Grundstruktur eines HTML-Dokuments</h4>
+                    <h4 style="margin-bottom: 8px;">Formulare und Eingabeelemente</h4>
 
                     <p style="margin-bottom: 14px;">
-                        Jede Webseite basiert auf einem HTML-Dokument. HTML steht für
-                        <strong>HyperText Markup Language</strong> und dient dazu, Inhalte strukturiert darzustellen.
+                        Formulare dienen dazu, Eingaben von Nutzern zu erfassen. Sie werden mit dem
+                        <strong>&lt;form&gt;</strong>-Element definiert und enthalten verschiedene Eingabefelder.
                     </p>
 
                     <p style="margin-bottom: 8px;">
-                        Ein HTML-Dokument besteht aus zwei zentralen Bereichen:
+                        Wichtige Elemente sind:
                     </p>
 
-                    <ul style="margin-top:0; margin-bottom:16px; padding-left:22px;">
-                        <li style="margin-bottom:8px;">
-                            <strong>&lt;head&gt;</strong>: enthält Metadaten zur Webseite, z. B. den Seitentitel
-                            oder Verweise auf andere Dateien.
-                        </li>
-                        <li>
-                            <strong>&lt;body&gt;</strong>: enthält die sichtbaren Inhalte der Webseite, etwa Texte,
-                            Bilder, Videos oder Formulare.
-                        </li>
-                    </ul>
+                    <pre style="background:#ffffff; padding:12px; border-radius:6px; color:#2d6c75; overflow-x:auto; margin-bottom:16px;"><code>&lt;input type="text"&gt;
+&lt;input type="number"&gt;
+&lt;button&gt;Absenden&lt;/button&gt;</code></pre>
 
                     <p style="margin-bottom: 16px;">
-                        Der Browser liest das Dokument von oben nach unten und stellt die Inhalte entsprechend dar.
+                        Diese ermöglichen die Eingabe und Übermittlung von Daten.
                     </p>
 
-                    <h4 style="margin-bottom: 8px;">Verknüpfung</h4>
+                    <h4 style="margin-bottom: 8px;">Beschriftung von Eingabefeldern</h4>
 
                     <p style="margin-bottom: 8px;">
-                        Moderne Webseiten bestehen meist aus mehreren Dateien:
+                        Damit Formulare verständlich sind, sollten Eingabefelder beschriftet werden.
+                        Dafür wird das <strong>&lt;label&gt;</strong>-Element verwendet:
                     </p>
 
-                    <ul style="margin-top:0; margin-bottom:16px; padding-left:22px;">
-                        <li>HTML beschreibt die Struktur der Inhalte</li>
-                        <li>CSS gestaltet das Layout</li>
-                        <li>JavaScript ermöglicht Interaktivität</li>
-                    </ul>
+                    <pre style="background:#ffffff; padding:12px; border-radius:6px; color:#2d6c75; overflow-x:auto; margin-bottom:16px;"><code>&lt;label&gt;Menge:&lt;/label&gt;
+&lt;input type="number"&gt;</code></pre>
 
-                    <p style="margin-bottom: 10px;">
-                        Damit diese Dateien zusammenarbeiten, müssen sie im HTML-Dokument verknüpft werden.
+                    <h4 style="margin-bottom: 8px;">Auswahlfelder (Dropdowns)</h4>
+
+                    <p style="margin-bottom: 8px;">
+                        Für vorgegebene Optionen wird das <strong>&lt;select&gt;</strong>-Element genutzt:
                     </p>
 
-                    <p style="margin-bottom: 6px;">
-                        Eine CSS-Datei wird im <strong>&lt;head&gt;</strong>-Bereich über das
-                        <strong>&lt;link&gt;</strong>-Tag eingebunden:
-                    </p>
-
-                    <pre style="background:#ffffff; padding:12px; border-radius:6px; color:#2d6c75; overflow-x:auto; margin-bottom:16px;"><code>&lt;link rel="stylesheet" href="style.css"&gt;</code></pre>
-
-                    <p style="margin-bottom: 6px;">
-                        JavaScript-Dateien werden über das <strong>&lt;script&gt;</strong>-Tag eingebunden:
-                    </p>
-
-                    <pre style="background:#ffffff; padding:12px; border-radius:6px; color:#2d6c75; overflow-x:auto; margin-bottom:16px;"><code>&lt;script src="script.js"&gt;&lt;/script&gt;</code></pre>
-
-                    <h4 style="margin-bottom: 8px;">Darstellung auf mobilen Geräten</h4>
-
-                    <p style="margin-bottom: 6px;">
-                        Webseiten werden auf verschiedenen Geräten angezeigt. Damit Inhalte auch auf Smartphones
-                        korrekt dargestellt werden, wird im <strong>&lt;head&gt;</strong> häufig ein
-                        Viewport-Meta-Tag eingefügt:
-                    </p>
-
-                    <pre style="background:#ffffff; padding:12px; border-radius:6px; color:#2d6c75; overflow-x:auto; margin-bottom:16px;"><code>&lt;meta name="viewport" content="width=device-width, initial-scale=1.0"&gt;</code></pre>
+                    <pre style="background:#ffffff; padding:12px; border-radius:6px; color:#2d6c75; overflow-x:auto; margin-bottom:16px;"><code>&lt;select&gt;
+  &lt;option&gt;Standard&lt;/option&gt;
+  &lt;option&gt;Express&lt;/option&gt;
+&lt;/select&gt;</code></pre>
 
                     <p style="margin-bottom: 16px;">
-                        Die Angabe <strong>width=device-width</strong> sorgt dafür, dass die Breite der Webseite
-                        an die tatsächliche Bildschirmbreite des Geräts angepasst wird.
+                        So kann der Nutzer gezielt aus festen Werten wählen.
                     </p>
 
-                    <h4 style="margin-bottom: 8px;">Multimedia mit HTML5 Video</h4>
+                    <h4 style="margin-bottom: 8px;">Pflichtfelder und Validierung</h4>
 
                     <p style="margin-bottom: 8px;">
-                        Das zentrale Element für Filme ist der <strong>&lt;video&gt;</strong>-Tag.
-                        Um die Kontrolle über das Video zu behalten, nutzt man verschiedene Attribute:
+                        HTML ermöglicht einfache Eingabeprüfungen ohne JavaScript.
+                    </p>
+
+                    <p style="margin-bottom: 8px;">
+                        Mit dem Attribut <strong>required</strong> wird ein Feld als Pflichtfeld definiert:
+                    </p>
+
+                    <pre style="background:#ffffff; padding:12px; border-radius:6px; color:#2d6c75; overflow-x:auto; margin-bottom:16px;"><code>&lt;input type="number" required&gt;</code></pre>
+
+                    <p style="margin-bottom: 16px;">
+                        Der Browser verhindert das Absenden des Formulars, solange das Feld leer ist.
+                    </p>
+
+                    <p style="margin-bottom: 8px;">
+                        Zusätzlich können Eingaben eingeschränkt werden:
                     </p>
 
                     <ul style="margin-top:0; margin-bottom:16px; padding-left:22px;">
-                        <li><strong>src</strong>: Gibt den Pfad zur Videodatei an.</li>
-                        <li><strong>controls</strong>: Blendet die Standard-Bedienelemente ein.</li>
-                        <li><strong>poster</strong>: Definiert das Bild, das angezeigt wird, während das Video lädt oder bevor es gestartet wird.</li>
+                        <li><strong>min / max</strong> → Wertebereich festlegen</li>
+                        <li><strong>placeholder</strong> → Hinweistext anzeigen</li>
                     </ul>
 
-                    <p style="margin-bottom: 6px;">Beispiel:</p>
-
-                    <pre style="background:#ffffff; padding:12px; border-radius:6px; color:#2d6c75; overflow-x:auto; margin-bottom:8px;"><code>&lt;video src="video.mp4" controls&gt;&lt;/video&gt;</code></pre>
-
-                    <p>
-                        Das Vorschaubild wird angezeigt, bis das Video gestartet wird.
+                    <p style="margin-bottom: 8px;">
+                        Beispiel:
                     </p>
+
+                    <pre style="background:#ffffff; padding:12px; border-radius:6px; color:#2d6c75; overflow-x:auto; margin-bottom:16px;"><code>&lt;input type="number" max="100" placeholder="Menge eingeben"&gt;</code></pre>
                 </div>
             `
         },
         {
-            id: "modul_a_q1",
+            id: "modul_b_q1",
             type: "single",
-            question: "Frage 1: Sie binden ein Video ein, möchten aber verhindern, dass der Browser während des Ladevorgangs nur eine schwarze Fläche anzeigt. Welches Attribut müssen Sie nutzen?",
+            question: "Frage 1: Welches Attribut sorgt dafür, dass ein Eingabefeld ausgefüllt werden muss?",
             answers: [
-                "src",
-                "poster",
-                "autoplay",
+                "placeholder",
+                "required",
+                "checked"
             ],
             entered: [],
             correct: "B",
@@ -129,13 +111,27 @@ const quiz = {
             attempts: 0
         },
         {
-            id: "modul_a_q2",
+            id: "modul_b_q2",
             type: "single",
-            question: "Frage 2: Was bewirkt die Angabe width=device-width im Viewport-Meta-Tag?",
+            question: "Frage 2: Was bewirkt das Attribut max=\"100\"?",
             answers: [
-                "Sie legt die Hintergrundfarbe für mobile Geräte fest.",
-                "Sie zwingt den Browser, die Breite der Seite an die tatsächliche Auflösung des Endgeräts anzupassen.",
-                "Sie startet automatisch den Download einer App.",
+                "Es begrenzt den maximal erlaubten Wert",
+                "Es löscht das Eingabefeld",
+                "Es macht das Feld optional"
+            ],
+            entered: [],
+            correct: "A",
+            locked: false,
+            attempts: 0
+        },
+        {
+            id: "modul_b_q3",
+            type: "single",
+            question: "Frage 3: Welches Element wird für Auswahlmenüs verwendet?",
+            answers: [
+                "<input>",
+                "<select>",
+                "<div>"
             ],
             entered: [],
             correct: "B",
@@ -143,21 +139,9 @@ const quiz = {
             attempts: 0
         },
         {
-            id: "modul_a_q3",
-            type: "single",
-            question: "Frage 3: Welches Attribut im <video>-Tag ist dafür verantwortlich, dass dem Nutzer Schaltflächen zum Abspielen, Pausieren und zur Lautstärkeregelung angezeigt werden?",
-            answers: [
-                "src",
-                "controls",
-                "poster",
-            ],
-            entered: [],
-            correct: "B",
-            locked: false,
-            attempts: 0
-        },
-        {
-            id: "modul_a_code",
+            id: "modul_b_code",
+            page: "modul_b",
+            taskType: "modul_b_form",
             type: "content",
             entered: ["gesehen"],
             codeAttempts: 0,
@@ -168,7 +152,8 @@ const quiz = {
                     </h3>
 
                     <p style="margin-bottom: 12px;">
-                        Erstellen Sie den Code für die Einbindung eines Videos in einer Webseite eines Logistik-Unternehmens.  Sie müssen das Video namens lager_rundgang.mp4 einbinden, welches das Bild vorschau_bild.jpg als Startbild haben sollte. Das HTML-Grundgerüst ist bereits vorgegeben. Um Ihren Code zu sehen, klicken Sie auf "Testen".
+                        Szenario: Ein Logistikunternehmen möchte ein Bestellformular erstellen,
+                        in dem Nutzer eine Produktmenge eingeben und eine Versandart auswählen können.
                     </p>
 
                     <p style="margin-bottom: 12px;">
@@ -176,12 +161,19 @@ const quiz = {
                     </p>
 
                     <ul style="margin-top:0; margin-bottom:20px; padding-left:22px;">
-                        <li>Integrieren Sie im &lt;body&gt; das Video <strong>lager_rundgang.mp4</strong>.</li>
-                        <li>Stellen Sie sicher, dass das Video die Bedienelemente (controls) anzeigt und beim Laden das Bild <strong>vorschau_bild.jpg</strong> (poster) präsentiert.</li>
+                        <li>Erstellen Sie ein HTML-Dokument mit einem <strong>&lt;form&gt;</strong>.</li>
+                        <li>Fügen Sie ein Zahlenfeld für die Menge ein.</li>
+                        <li>Fügen Sie ein Dropdown (<strong>&lt;select&gt;</strong>) für die Versandart mit den Optionen <strong>Standard</strong> und <strong>Express</strong> ein.</li>
+                        <li>Fügen Sie einen Button zum Absenden ein.</li>
+                        <li>Beschriften Sie alle Eingabefelder mit <strong>&lt;label&gt;</strong>.</li>
+                        <li>Das Mengenfeld muss <strong>required</strong> sein.</li>
+                        <li>Das Mengenfeld muss nur Werte zwischen <strong>1</strong> und <strong>100</strong> erlauben (<strong>min</strong>, <strong>max</strong>).</li>
+                        <li>Das Mengenfeld soll einen Hinweistext mit <strong>placeholder</strong> enthalten.</li>
                     </ul>
 
                     <p style="font-size:14px; color:#6b8c92; margin-top:10px;">
-                    <strong>Hinweis</strong>: Das Video wird ohne weitere Angaben sehr groß dargestellt. Sie können die Größe mit dem Attribut <strong>width</strong> anpassen (z. B. width="300"), damit es besser sichtbar ist.
+                        <strong>Hinweis</strong>: Verwenden Sie beim Mengenfeld im <strong>&lt;input&gt;</strong>-Tag
+                        zusätzlich <strong>style="width: 150px;"</strong>, damit auch ein längerer Hinweistext gut lesbar ist.
                     </p>
 
                     <div id="code-task-wrapper" style="display:flex; gap:20px; align-items:flex-start; margin-bottom:16px;">
@@ -232,7 +224,7 @@ function setQuizTitle() {
 // Lädt abhängig vom Seitentyp die passende Inhalts- oder Fragenseite.
 function loadQuestion(question, initLoad) {
     questionStartTime = Date.now();
-    
+
     updateProgressBarStatus();
     startTaskTimer();
 
@@ -508,13 +500,6 @@ function showHideContinueButton(question) {
 async function loadNewQuestion(adjustment) {
     var currentQuestion = quiz.questions[currentQuestionIndex];
 
-    // Wenn auf der letzten Seite von Modul A auf "Weiter" geklickt wird,
-    // direkt zu Modul B wechseln
-    if (adjustment === "next-question-load" && currentQuestionIndex === quiz.questions.length - 1) {
-        window.location.href = "modul-b.html";
-        return;
-    }
-
     if (adjustment === "next-question-load") {
         if (currentQuestion.type === "single") {
             if (!currentQuestion.entered || currentQuestion.entered.length === 0) {
@@ -530,7 +515,7 @@ async function loadNewQuestion(adjustment) {
 
                 await trackEvent({
                     event_type: "quiz_answer",
-                    page: "modul_a",
+                    page: "modul_b",
                     question_id: currentQuestion.id,
                     is_correct: isCorrect,
                     attempts: currentQuestion.attempts,
