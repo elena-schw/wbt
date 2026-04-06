@@ -159,16 +159,18 @@ const quiz = {
         {
             id: "modul_a_code",
             type: "content",
+            page: "modul_a",
+            taskType: "modul_a_video",
             entered: ["gesehen"],
             codeAttempts: 0,
             content: `
                 <div style="color:#35646b;">
                     <h3 style="color: rgb(56, 189, 207); margin-bottom: 16px;">
-                        3. Anwendungsaufgabe
+                        2. Anwendungsaufgabe
                     </h3>
 
                     <p style="margin-bottom: 12px;">
-                        Erstellen Sie den Code für die Einbindung eines Videos in einer Webseite eines Logistik-Unternehmens.  Sie müssen das Video namens lager_rundgang.mp4 einbinden, welches das Bild vorschau_bild.jpg als Startbild haben sollte. Das HTML-Grundgerüst ist bereits vorgegeben. Um Ihren Code zu sehen, klicken Sie auf "Testen".
+                        Erstellen Sie den Code für die Einbindung eines Videos in einer Webseite eines Logistik-Unternehmens.  Sie müssen das Video namens <strong>lager_rundgang.mp4</strong> einbinden, welches das Bild <strong>vorschau_bild.jpg</strong> als Startbild haben sollte. Das HTML-Grundgerüst ist bereits vorgegeben. Um Ihren Code zu sehen, klicken Sie auf <strong>Testen</strong>.
                     </p>
 
                     <p style="margin-bottom: 12px;">
@@ -193,6 +195,10 @@ const quiz = {
                     <button id="run-code" class="quiz-continue-button" style="margin-top: 0;">Testen</button>
 
                     <div id="feedback" style="margin-top:12px; font-weight:bold;"></div>
+
+                    <div style="font-size:14px; color:#6b8c92; margin-top:10px;">
+                    <strong>Hinweis</strong>: Beim Klick auf <strong>Weiter</strong> geht es zum nächsten Modul. Sie können dann nicht mehr zum jetzigen Modul zurückkehren.
+                    </div>
                 </div>
             `
         }

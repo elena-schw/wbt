@@ -148,27 +148,35 @@ const quiz = {
             content: `
                 <div style="color:#35646b;">
                     <h3 style="color: rgb(56, 189, 207); margin-bottom: 16px;">
-                        3. Anwendungsaufgabe
+                        2. Anwendungsaufgabe
                     </h3>
 
                     <p style="margin-bottom: 12px;">
                         Szenario: Ein Logistikunternehmen möchte ein Bestellformular erstellen,
-                        in dem Nutzer eine Produktmenge eingeben und eine Versandart auswählen können.
+                        in dem Nutzer eine Produktmenge eingeben und eine Versandart auswählen können. Das HTML-Grundgerüst ist bereits vorgegeben. Um Ihren Code zu sehen, klicken Sie auf <strong>Testen</strong>.
                     </p>
 
                     <p style="margin-bottom: 12px;">
                         Ihre Aufgabe:
                     </p>
 
+                    <p>
+                    Erstellen Sie ein HTML-Dokument mit einem <strong>&lt;form&gt;</strong>, das folgende Anforderungen erfüllt:
+                    </p>
+
                     <ul style="margin-top:0; margin-bottom:20px; padding-left:22px;">
-                        <li>Erstellen Sie ein HTML-Dokument mit einem <strong>&lt;form&gt;</strong>.</li>
-                        <li>Fügen Sie ein Zahlenfeld für die Menge ein.</li>
-                        <li>Fügen Sie ein Dropdown (<strong>&lt;select&gt;</strong>) für die Versandart mit den Optionen <strong>Standard</strong> und <strong>Express</strong> ein.</li>
-                        <li>Fügen Sie einen Button zum Absenden ein.</li>
-                        <li>Beschriften Sie alle Eingabefelder mit <strong>&lt;label&gt;</strong>.</li>
-                        <li>Das Mengenfeld muss <strong>required</strong> sein.</li>
-                        <li>Das Mengenfeld muss nur Werte zwischen <strong>1</strong> und <strong>100</strong> erlauben (<strong>min</strong>, <strong>max</strong>).</li>
-                        <li>Das Mengenfeld soll einen Hinweistext mit <strong>placeholder</strong> enthalten.</li>
+                        <li>ein Zahlenfeld für die Menge</li>
+                        <li>ein Dropdown (<strong>&lt;select&gt;</strong>) für die Versandart (Standard/Express)</li>
+                        <li>einen Button zum Absenden</li>
+                        <li>alle Eingabefelder (<strong>&lt;label&gt;</strong>) sind beschriftet</li>
+                    </ul>
+
+                    <p>Zusätzlich muss dass Mengenfeld:</p>
+
+                    <ul style="margin-top:0; margin-bottom:20px; padding-left:22px;">
+                        <li>ein Pflichtfeld (<strong>required</strong>) sein</li>
+                        <li>nur Werte zwischen <strong>1</strong> und <strong>100</strong> erlauben (<strong>min</strong>, <strong>max</strong>)</li>
+                        <li>einen Hinweistext mit <strong>placeholder</strong> enthalten.</li>
                     </ul>
 
                     <p style="font-size:14px; color:#6b8c92; margin-top:10px;">
