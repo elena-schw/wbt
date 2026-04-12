@@ -170,7 +170,11 @@ const quiz = {
                     </h3>
 
                     <p style="margin-bottom: 12px;">
-                        Erstellen Sie den Code für die Einbindung eines Videos in einer Webseite eines Logistik-Unternehmens.  Sie müssen das Video namens <strong>lager_rundgang.mp4</strong> einbinden, welches das Bild <strong>vorschau_bild.jpg</strong> als Startbild haben sollte. Das HTML-Grundgerüst ist bereits vorgegeben. Um Ihren Code zu sehen, klicken Sie auf <strong>Testen</strong>.
+                        <strong>Szenario:</strong> Erstellen Sie den Code für die Einbindung eines Videos in einer Webseite eines Logistik-Unternehmens.  Sie müssen das Video namens <strong>lager_rundgang.mp4</strong> einbinden, welches das Bild <strong>vorschau_bild.jpg</strong> als Startbild haben sollte.
+                    </p>
+                    
+                    <p style="margin-bottom: 12px;">
+                        Das HTML-Grundgerüst ist bereits vorgegeben. Um Ihren Code zu sehen und Feedback zu bekommen, klicken Sie auf <strong>Testen</strong>.
                     </p>
 
                     <p style="margin-bottom: 12px;">

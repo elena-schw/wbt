@@ -19,10 +19,11 @@ const quiz = {
 
                     <p style="margin-bottom:16px;">
                         Der Test wird am Ende erneut durchgeführt, um zu überprüfen, ob sich Ihr Wissen
-                        durch das WBT verändert hat.
+                        durch das WBT verändert hat. Er ist somit Teil der wissenschaftlichen Auswertung
+                        und nicht der eigentliche Beginn des Trainings.
                     </p>
 
-                    <p>Klicken Sie auf <strong>Weiter</strong>, um die 12 Fragen zu beantworten.</p>
+                    <p>Klicken Sie auf <strong>Weiter</strong>, um die 9 Fragen zu beantworten.</p>
                 </div>
             `
         },
@@ -48,14 +49,14 @@ const quiz = {
             id: "pre_html_q2",
             domain: "html",
             type: "single",
-            question: "Frage 2: Welches Attribut sorgt dafür, dass Bedienelemente angezeigt werden?",
+            question: "Frage 2: Welches Attribut sorgt dafür, dass Bedienelemente (Play, Pause) angezeigt werden?",
             answers: [
-                "autoplay",
                 "poster",
                 "controls",
+                "autoplay",
                 "Das weiß ich nicht."
             ],
-            correct: "C",
+            correct: "B",
             entered: [],
             locked: false,
             attempts: 0
@@ -64,30 +65,14 @@ const quiz = {
             id: "pre_html_q3",
             domain: "html",
             type: "single",
-            question: "Frage 3: Welcher input-Typ eignet sich für eine Bestellmenge?",
+            question: "Frage 3: Welcher input-Typ eignet sich für die Eingabe einer Bestellmenge?",
             answers: [
-                "type=\"number\"",
-                "type=\"text\"",
-                "type=\"select\"",
+                'type="text"',
+                'type="select"',
+                'type="number"',
                 "Das weiß ich nicht."
             ],
-            correct: "A",
-            entered: [],
-            locked: false,
-            attempts: 0
-        },
-        {
-            id: "pre_html_q4",
-            domain: "html",
-            type: "single",
-            question: "Frage 4: Wofür wird das Attribut placeholder verwendet?",
-            answers: [
-                "Es begrenzt die Eingabe",
-                "Es zeigt einen Hinweistext im Feld",
-                "Es macht das Feld verpflichtend",
-                "Das weiß ich nicht."
-            ],
-            correct: "B",
+            correct: "C",
             entered: [],
             locked: false,
             attempts: 0
@@ -98,14 +83,14 @@ const quiz = {
             id: "pre_css_q1",
             domain: "css",
             type: "single",
-            question: "Frage 5: Welche Eigenschaft verändert die Hintergrundfarbe?",
+            question: "Frage 4: Was bewirkt padding bei einem Element?",
             answers: [
-                "font-size",
-                "color",
-                "background-color",
+                "Es verändert die Textfarbe.",
+                "Es erzeugt Abstand innerhalb des Elements.",
+                "Es erzeugt Abstand außerhalb des Elements.",
                 "Das weiß ich nicht."
             ],
-            correct: "C",
+            correct: "B",
             entered: [],
             locked: false,
             attempts: 0
@@ -114,11 +99,11 @@ const quiz = {
             id: "pre_css_q2",
             domain: "css",
             type: "single",
-            question: "Frage 6: Was bewirkt padding?",
+            question: "Frage 5: Wie wird eine CSS-Klasse namens container im Stylesheet angesprochen?",
             answers: [
-                "Abstand außerhalb",
-                "Textfarbe ändern",
-                "Abstand innerhalb",
+                "#container",
+                "container",
+                ".container",
                 "Das weiß ich nicht."
             ],
             correct: "C",
@@ -130,27 +115,11 @@ const quiz = {
             id: "pre_css_q3",
             domain: "css",
             type: "single",
-            question: "Frage 7: Wie wird eine CSS-Klasse angesprochen?",
+            question: "Frage 6: Was bewirkt flex-direction: row; in einem Flex-Container?",
             answers: [
-                "#container",
-                ".container",
-                "container",
-                "Das weiß ich nicht."
-            ],
-            correct: "B",
-            entered: [],
-            locked: false,
-            attempts: 0
-        },
-        {
-            id: "pre_css_q4",
-            domain: "css",
-            type: "single",
-            question: "Frage 8: Was bewirkt flex-direction: row?",
-            answers: [
-                "untereinander",
-                "nebeneinander",
-                "eingefärbt",
+                "Die Elemente werden untereinander angeordnet.",
+                "Die Elemente werden nebeneinander angeordnet.",
+                "Die Elemente werden gleichmäßig eingefärbt.",
                 "Das weiß ich nicht."
             ],
             correct: "B",
@@ -164,11 +133,11 @@ const quiz = {
             id: "pre_js_q1",
             domain: "js",
             type: "single",
-            question: "Frage 9: Wofür wird das <script>-Tag verwendet?",
+            question: "Frage 7: Wofür wird das <script>-Tag in einer HTML-Datei verwendet?",
             answers: [
-                "CSS einfügen",
-                "Formulare definieren",
-                "JavaScript einbinden",
+                "Zum Einfügen von CSS-Regeln",
+                "Zum Definieren von Formularfeldern",
+                "Zum Einbinden oder Schreiben von JavaScript-Code",
                 "Das weiß ich nicht."
             ],
             correct: "C",
@@ -180,11 +149,11 @@ const quiz = {
             id: "pre_js_q2",
             domain: "js",
             type: "single",
-            question: "Frage 10: Was macht innerHTML?",
+            question: "Frage 8: Was macht innerHTML?",
             answers: [
-                "Neues Element erstellen",
-                "Inhalt verändern",
-                "Datei laden",
+                "Es erstellt ein neues Element",
+                "Es verändert den Inhalt eines HTML-Elements",
+                "Es lädt eine Datei",
                 "Das weiß ich nicht."
             ],
             correct: "B",
@@ -196,30 +165,14 @@ const quiz = {
             id: "pre_js_q3",
             domain: "js",
             type: "single",
-            question: "Frage 11: Wofür steht &&?",
+            question: "Frage 9: Wofür steht && in einer JavaScript-Bedingung?",
             answers: [
-                "oder",
-                "gleich",
-                "und",
+                "für „oder“",
+                "für „gleich“",
+                "für „und“",
                 "Das weiß ich nicht."
             ],
             correct: "C",
-            entered: [],
-            locked: false,
-            attempts: 0
-        },
-        {
-            id: "pre_js_q4",
-            domain: "js",
-            type: "single",
-            question: "Frage 12: Was macht eine while-Schleife?",
-            answers: [
-                "läuft solange Bedingung wahr ist",
-                "prüft einmal",
-                "ändert HTML",
-                "Das weiß ich nicht."
-            ],
-            correct: "A",
             entered: [],
             locked: false,
             attempts: 0
@@ -633,11 +586,8 @@ function countCorrectByDomain(domain) {
 }
 
 function getLevelFromScore(score) {
-    if (score >= 3) {
+    if (score >= 2) {
         return "advanced";
-    }
-    if (score === 2) {
-        return "advanced_with_tips";
     }
     return "basics";
 }

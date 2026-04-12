@@ -30,9 +30,17 @@ const quiz = {
                         Wichtige Elemente sind:
                     </p>
 
-                    <pre style="background:#ffffff; padding:12px; border-radius:6px; color:#2d6c75; overflow-x:auto; margin-bottom:16px;"><code>&lt;input type="text"&gt;
+                    <pre style="background:#ffffff; padding:12px; border-radius:6px; color:#2d6c75; overflow-x:auto; margin-bottom:8px;"><code>&lt;input type="text"&gt;
 &lt;input type="number"&gt;
 &lt;button&gt;Absenden&lt;/button&gt;</code></pre>
+
+                    <p style="margin-bottom: 16px;">
+                        <span class="tip-popup-wrapper">
+                            <button type="button" class="tip-trigger" data-tip="Das Attribut type bestimmt, welche Art von Eingabe möglich ist, z. B. Text oder Zahlen.">
+                                Mehr zum Attribut <strong>type</strong>
+                            </button>
+                        </span>
+                    </p>
 
                     <p style="margin-bottom: 16px;">
                         Diese ermöglichen die Eingabe und Übermittlung von Daten.
@@ -152,37 +160,73 @@ const quiz = {
                     </h3>
 
                     <p style="margin-bottom: 12px;">
-                        Szenario: Ein Logistikunternehmen möchte ein Bestellformular erstellen,
-                        in dem Nutzer eine Produktmenge eingeben und eine Versandart auswählen können. Das HTML-Grundgerüst ist bereits vorgegeben. Um Ihren Code zu sehen, klicken Sie auf <strong>Testen</strong>.
+                        <strong>Szenario:</strong>
+                        Ein Logistikunternehmen möchte ein Bestellformular erstellen, in dem Nutzer eine Produktmenge eingeben
+                        und eine Versandart auswählen können.
                     </p>
 
                     <p style="margin-bottom: 12px;">
-                        Ihre Aufgabe:
+                        Das HTML-Grundgerüst ist bereits vorgegeben. Um Ihren Code zu sehen und Feedback zu bekommen,
+                        klicken Sie auf <strong>Testen</strong>.
                     </p>
 
-                    <p>
-                    Erstellen Sie ein HTML-Dokument mit einem <strong>&lt;form&gt;</strong>, das folgende Anforderungen erfüllt:
+                    <p style="margin-bottom: 12px;">
+                        <strong>Ihre Aufgabe:</strong>
+                    </p>
+
+                    <p style="margin-bottom: 10px;">
+                        Erstellen Sie ein HTML-Dokument mit einem Formular, das folgende Anforderungen erfüllt:
                     </p>
 
                     <ul style="margin-top:0; margin-bottom:20px; padding-left:22px;">
                         <li>ein Zahlenfeld für die Menge</li>
-                        <li>ein Dropdown (<strong>&lt;select&gt;</strong>) für die Versandart (Standard/Express)</li>
-                        <li>einen Button zum Absenden</li>
-                        <li>alle Eingabefelder (<strong>&lt;label&gt;</strong>) sind beschriftet</li>
+                        <li>ein Dropdown für die Versandart (Standard, Express)</li>
+                        <li>ein Button zum Absenden</li>
+                        <li>alle Eingabefelder sind beschriftet</li>
                     </ul>
 
-                    <p>Zusätzlich muss dass Mengenfeld:</p>
+                    <p style="margin-bottom: 10px;">Zusätzlich muss das Zahlenfeld:</p>
 
                     <ul style="margin-top:0; margin-bottom:20px; padding-left:22px;">
-                        <li>ein Pflichtfeld (<strong>required</strong>) sein</li>
-                        <li>nur Werte zwischen <strong>1</strong> und <strong>100</strong> erlauben (<strong>min</strong>, <strong>max</strong>)</li>
-                        <li>einen Hinweistext mit <strong>placeholder</strong> enthalten.</li>
+                        <li>ein Pflichtfeld sein</li>
+                        <li>nur Werte zwischen 1 und 100 erlauben</li>
+                        <li>einen Hinweistext enthalten</li>
                     </ul>
 
-                    <p style="font-size:14px; color:#6b8c92; margin-top:10px;">
-                        <strong>Hinweis</strong>: Verwenden Sie beim Mengenfeld im <strong>&lt;input&gt;</strong>-Tag
-                        zusätzlich <strong>style="width: 150px;"</strong>, damit auch ein längerer Hinweistext gut lesbar ist.
-                    </p>
+                    <div class="tip-toggle-wrapper" style="margin-bottom:16px;">
+
+                    <button type="button" class="tip-toggle-button">
+                        Tipps einblenden/ausblenden 💡
+                    </button>
+
+                    <div class="tip-toggle-content" style="display:none;">
+                        <p style="margin-top:12px; margin-bottom:10px;">
+                            Beginnen Sie das Formular mit dem <strong>&lt;form&gt;</strong>-Tag und fügen Sie die Eingabefelder Schritt für Schritt ein.
+                        </p>
+
+                        <p style="margin-bottom:10px;">
+                            Ein Dropdown-Menü erstellen Sie mit <strong>&lt;select&gt;</strong> und <strong>&lt;option&gt;</strong>.
+                        </p>
+
+                        <p style="margin-bottom:10px;">
+                            Ein Zahlenfeld wird mit <strong>&lt;input type="number"&gt;</strong> erstellt.
+                        </p>
+
+                        <p style="margin-bottom:10px;">
+                            Beschriftungen fügen Sie mit <strong>&lt;label&gt;</strong> vor den Eingabefeldern hinzu.
+                        </p>
+
+                        <p style="margin-bottom:10px;">
+                            Attribute wie <strong>required</strong>, <strong>min</strong>, <strong>max</strong> und <strong>placeholder</strong>
+                            werden direkt im <strong>&lt;input&gt;</strong>-Tag ergänzt.
+                        </p>
+
+                        <p style="margin-bottom:0;">
+                            Optional: Benutzen Sie im <strong>&lt;input&gt;</strong>-Tag
+                            <strong>style="width: 150px;"</strong>, damit auch ein längerer Hinweistext im Mengenfeld lesbar ist.
+                        </p>
+                    </div>
+                </div>
 
                     <div id="code-task-wrapper" style="display:flex; gap:20px; align-items:flex-start; margin-bottom:16px;">
                         <textarea id="code-input" style="width:50%; height:320px; padding:12px; font-family:monospace; font-size:14px; border:1px solid #ccc; border-radius:6px; resize:vertical;"></textarea>
@@ -251,10 +295,70 @@ function loadQuestion(question, initLoad) {
     showHideContinueButton(question);
 }
 
+//Pop-Ups
+function initTipPopups() {
+    var triggers = document.querySelectorAll(".tip-trigger");
+
+    function closeAllTips() {
+        var existingTips = document.querySelectorAll(".custom-tip-popup");
+        for (var i = 0; i < existingTips.length; i++) {
+            existingTips[i].remove();
+        }
+    }
+
+    for (var i = 0; i < triggers.length; i++) {
+        triggers[i].onclick = function (event) {
+            event.stopPropagation();
+
+            var alreadyOpen = this.parentNode.querySelector(".custom-tip-popup");
+            closeAllTips();
+
+            if (alreadyOpen) {
+                return;
+            }
+
+            var popup = document.createElement("div");
+            popup.className = "custom-tip-popup";
+            popup.textContent = this.getAttribute("data-tip");
+
+            this.parentNode.appendChild(popup);
+        };
+    }
+
+    document.addEventListener("click", function () {
+        closeAllTips();
+    });
+}
+
+//Hints 
+function initTipToggles() {
+    var buttons = document.querySelectorAll(".tip-toggle-button");
+
+    for (var i = 0; i < buttons.length; i++) {
+        buttons[i].onclick = function () {
+            var wrapper = this.parentNode;
+            var content = wrapper.querySelector(".tip-toggle-content");
+
+            if (!content) {
+                return;
+            }
+
+            if (content.style.display === "none" || content.style.display === "") {
+                content.style.display = "block";
+            } else {
+                content.style.display = "none";
+            }
+        };
+    }
+}
+
 // Rendert eine Inhaltsseite und initialisiert bei Bedarf die Code-Aufgabe.
 function loadContentPage(question) {
     var quizQuestionTextDIV = document.getElementById("quiz-question-text-container");
     quizQuestionTextDIV.innerHTML = question.content;
+
+    initTipPopups();
+    initTipToggles();
 
     if (document.getElementById("run-code")) {
         initCodeTask(question);
