@@ -18,12 +18,12 @@ const quiz = {
                     </p>
 
                     <p style="margin-bottom:16px;">
-                        Der Test wird am Ende erneut durchgeführt, um zu überprüfen, ob sich Ihr Wissen
+                        Den gleichen Test haben Sie schon am Anfang bearbeitet. Er dient zur Überprüfung, ob sich Ihr Wissen
                         durch das WBT verändert hat. Er ist somit Teil der wissenschaftlichen Auswertung
-                        und nicht der eigentliche Beginn des Trainings.
+                        und nicht Teil des Trainings.
                     </p>
 
-                    <p>Klicken Sie auf <strong>Weiter</strong>, um die 9 Fragen zu beantworten.</p>
+                    <p>Klicken Sie auf <strong>Weiter</strong>, um die 9 Fragen nochmals zu beantworten.</p>
                 </div>
             `
         },
@@ -629,7 +629,7 @@ async function finalizePosttest() {
         duration_ms: null
     });
 
-    window.location.href = "../abschluss/danke.html";
+    window.location.href = "../abschluss/abschluss.html";
 }
 
 /* -----------------------------

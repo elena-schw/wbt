@@ -1,5 +1,5 @@
 const quiz = {
-    name: "Modul B: Erweiterte HTML-Strukturen und Formulare",
+    name: "Modul E: JavaScript Grundlagen",
     questions: [
         {
             type: "content",
@@ -7,125 +7,99 @@ const quiz = {
             content: `
                 <div style="color:#35646b;">
                     <h2 style="color: rgb(56, 189, 207); margin-bottom: 16px;">
-                        Modul B: Erweiterte HTML-Strukturen und Formulare
+                        Modul E: JavaScript Grundlagen
                     </h2>
 
                     <p style="font-size:16px; margin-bottom:22px;">
-                        In diesem Modul vertiefen Sie Ihre HTML-Kenntnisse. Sie lernen, wie Formulare aufgebaut werden
-                        und wie Eingaben bereits mit HTML überprüft werden können.
+                        In diesem Modul lernen Sie die Grundlagen von JavaScript kennen. Sie erfahren,
+                        wie Webseiten auf Benutzeraktionen reagieren und Inhalte dynamisch verändert werden können.
                     </p>
 
                     <h3 style="color: rgb(56, 189, 207); margin-bottom: 12px;">
-                        1. Theorie: Erweiterte HTML-Konzepte
+                        1. Theorie: Einführung in JavaScript
                     </h3>
 
-                    <h4 style="margin-bottom: 8px;">Formulare und Eingabeelemente</h4>
+                    <h4 style="margin-bottom: 8px;">Was ist JavaScript?</h4>
 
                     <p style="margin-bottom: 14px;">
-                        Formulare dienen dazu, Eingaben von Nutzern zu erfassen. Sie werden mit dem
-                        <strong>&lt;form&gt;</strong>-Element definiert und enthalten verschiedene Eingabefelder.
+                        JavaScript ist eine Programmiersprache, mit der Webseiten interaktiv gemacht werden können.
+                        Während HTML die Struktur und CSS das Design bestimmt, ermöglicht JavaScript die Reaktion
+                        auf Benutzeraktionen, z. B. Klicks auf Buttons.
                     </p>
+
+                    <h4 style="margin-bottom: 8px;">Einbindung von JavaScript</h4>
 
                     <p style="margin-bottom: 8px;">
-                        Wichtige Elemente sind:
+                        JavaScript kann direkt in eine HTML-Datei eingebunden werden:
                     </p>
 
-                    <pre style="background:#ffffff; padding:12px; border-radius:6px; color:#2d6c75; overflow-x:auto; margin-bottom:8px;"><code>&lt;input type="text"&gt;
-&lt;input type="number"&gt;
-&lt;button&gt;Absenden&lt;/button&gt;</code></pre>
+                    <pre style="background:#ffffff; padding:12px; border-radius:6px; color:#2d6c75; overflow-x:auto; margin-bottom:16px;"><code>&lt;script&gt;
+  // JavaScript-Code
+&lt;/script&gt;</code></pre>
 
                     <p style="margin-bottom: 16px;">
-                        <span class="tip-popup-wrapper">
-                            <button type="button" class="tip-trigger" data-tip="Das Attribut type bestimmt, welche Art von Eingabe möglich ist, z. B. Text oder Zahlen.">
-                                Mehr zum Attribut <strong>type</strong>
-                            </button>
-                        </span>
+                        Das <strong>&lt;script&gt;</strong>-Tag wird meist am Ende des <strong>&lt;body&gt;</strong> platziert.
                     </p>
+
+                    <h4 style="margin-bottom: 8px;">Funktionen in JavaScript</h4>
+
+                    <p style="margin-bottom: 8px;">
+                        JavaScript-Code wird häufig in Funktionen organisiert. Eine Funktion wird definiert
+                        und kann anschließend aufgerufen werden.
+                    </p>
+
+                    <pre style="background:#ffffff; padding:12px; border-radius:6px; color:#2d6c75; overflow-x:auto; margin-bottom:16px;"><code>function begruessung() {
+    alert("Willkommen auf meiner Seite!");
+}</code></pre>
 
                     <p style="margin-bottom: 16px;">
-                        Diese ermöglichen die Eingabe und Übermittlung von Daten.
+                        Diese Funktion zeigt ein Hinweisfenster (<strong>alert</strong>) an.
                     </p>
 
-                    <h4 style="margin-bottom: 8px;">Beschriftung von Eingabefeldern</h4>
+                    <h4 style="margin-bottom: 8px;">Ereignisse (Events)</h4>
 
                     <p style="margin-bottom: 8px;">
-                        Damit Formulare verständlich sind, sollten Eingabefelder beschriftet werden.
-                        Dafür wird das <strong>&lt;label&gt;</strong>-Element verwendet:
+                        Webseiten reagieren auf Benutzeraktionen, sogenannte Events.
                     </p>
-
-                    <pre style="background:#ffffff; padding:12px; border-radius:6px; color:#2d6c75; overflow-x:auto; margin-bottom:16px;"><code>&lt;label&gt;Menge:&lt;/label&gt;
-&lt;input type="number"&gt;</code></pre>
-
-                    <h4 style="margin-bottom: 8px;">Auswahlfelder (Dropdowns)</h4>
 
                     <p style="margin-bottom: 8px;">
-                        Für vorgegebene Optionen wird das <strong>&lt;select&gt;</strong>-Element genutzt:
+                        Ein häufiges Event ist der Klick auf einen Button:
                     </p>
 
-                    <pre style="background:#ffffff; padding:12px; border-radius:6px; color:#2d6c75; overflow-x:auto; margin-bottom:16px;"><code>&lt;select&gt;
-  &lt;option&gt;Standard&lt;/option&gt;
-  &lt;option&gt;Express&lt;/option&gt;
-&lt;/select&gt;</code></pre>
+                    <pre style="background:#ffffff; padding:12px; border-radius:6px; color:#2d6c75; overflow-x:auto; margin-bottom:16px;"><code>&lt;button onclick="begruessung()"&gt;Klick mich&lt;/button&gt;</code></pre>
 
                     <p style="margin-bottom: 16px;">
-                        So kann der Nutzer gezielt aus festen Werten wählen.
+                        Beim Klick wird die Funktion ausgeführt.
                     </p>
 
-                    <h4 style="margin-bottom: 8px;">Pflichtfelder und Validierung</h4>
+                    <h4 style="margin-bottom: 8px;">Inhalte dynamisch verändern</h4>
 
                     <p style="margin-bottom: 8px;">
-                        HTML ermöglicht einfache Eingabeprüfungen ohne JavaScript.
-                    </p>
-
-                    <p style="margin-bottom: 8px;">
-                        Mit dem Attribut <strong>required</strong> wird ein Feld als Pflichtfeld definiert:
-                    </p>
-
-                    <pre style="background:#ffffff; padding:12px; border-radius:6px; color:#2d6c75; overflow-x:auto; margin-bottom:16px;"><code>&lt;input type="number" required&gt;</code></pre>
-
-                    <p style="margin-bottom: 16px;">
-                        Der Browser verhindert das Absenden des Formulars, solange das Feld leer ist.
+                        Mit JavaScript können Inhalte in der HTML-Seite verändert werden.
                     </p>
 
                     <p style="margin-bottom: 8px;">
-                        Zusätzlich können Eingaben eingeschränkt werden:
+                        Ein wichtiges Konzept ist das Ansprechen von Elementen über ihre ID:
                     </p>
 
-                    <ul style="margin-top:0; margin-bottom:16px; padding-left:22px;">
-                        <li><strong>min / max</strong> → Wertebereich festlegen</li>
-                        <li><strong>placeholder</strong> → Hinweistext anzeigen</li>
-                    </ul>
+                    <pre style="background:#ffffff; padding:12px; border-radius:6px; color:#2d6c75; overflow-x:auto; margin-bottom:16px;"><code>&lt;p id="text"&gt;&lt;/p&gt;
 
-                    <p style="margin-bottom: 8px;">
-                        Beispiel:
+document.getElementById("text").innerHTML = "Hallo!";</code></pre>
+
+                    <p>
+                        Damit wird der Inhalt/Text in das <strong>&lt;p&gt;</strong>-Element geschrieben und dort angezeigt.
                     </p>
-
-                    <pre style="background:#ffffff; padding:12px; border-radius:6px; color:#2d6c75; overflow-x:auto; margin-bottom:16px;"><code>&lt;input type="number" max="100" placeholder="Menge eingeben"&gt;</code></pre>
                 </div>
             `
         },
         {
-            id: "modul_b_q1",
+            id: "modul_e_q1",
             type: "single",
-            question: "Frage 1: Welches Attribut sorgt dafür, dass ein Eingabefeld ausgefüllt werden muss?",
+            question: "Frage 1: Wofür wird JavaScript verwendet?",
             answers: [
-                "placeholder",
-                "required",
-                "checked"
-            ],
-            entered: [],
-            correct: "B",
-            locked: false,
-            attempts: 0
-        },
-        {
-            id: "modul_b_q2",
-            type: "single",
-            question: "Frage 2: Was bewirkt das Attribut max=\"100\"?",
-            answers: [
-                "Es begrenzt den maximal erlaubten Wert",
-                "Es löscht das Eingabefeld",
-                "Es macht das Feld optional"
+                "Für Interaktivität und Verhalten",
+                "Für das Design der Webseite",
+                "Für die Struktur der Inhalte"
             ],
             entered: [],
             correct: "A",
@@ -133,13 +107,27 @@ const quiz = {
             attempts: 0
         },
         {
-            id: "modul_b_q3",
+            id: "modul_e_q2",
             type: "single",
-            question: "Frage 3: Welches Element wird für Auswahlmenüs verwendet?",
+            question: "Frage 2: Was ist eine Funktion?",
             answers: [
-                "<input>",
-                "<select>",
-                "<div>"
+                "Eine Farbeinstellung",
+                "Ein HTML-Element",
+                "Ein wiederverwendbarer Codeblock"
+            ],
+            entered: [],
+            correct: "C",
+            locked: false,
+            attempts: 0
+        },
+        {
+            id: "modul_e_q3",
+            type: "single",
+            question: "Frage 3: Wann wird onclick ausgeführt?",
+            answers: [
+                "Beim Laden der Seite",
+                "Beim Klick auf ein Element",
+                "Beim Scrollen"
             ],
             entered: [],
             correct: "B",
@@ -147,10 +135,10 @@ const quiz = {
             attempts: 0
         },
         {
-            id: "modul_b_code",
-            page: "modul_b",
-            taskType: "modul_b_form",
+            id: "modul_e_code",
             type: "content",
+            page: "modul_e",
+            taskType: "modul_e_js",
             entered: ["gesehen"],
             codeAttempts: 0,
             content: `
@@ -160,9 +148,8 @@ const quiz = {
                     </h3>
 
                     <p style="margin-bottom: 12px;">
-                        <strong>Szenario:</strong>
-                        Ein Logistikunternehmen möchte ein Bestellformular erstellen, in dem Nutzer eine Produktmenge eingeben
-                        und eine Versandart auswählen können.
+                        <strong>Szenario:</strong> Ein Logistikunternehmen möchte auf seiner Webseite einen Button einbauen,
+                        der beim Klicken eine Begrüßung anzeigt.
                     </p>
 
                     <p style="margin-bottom: 12px;">
@@ -171,62 +158,14 @@ const quiz = {
                     </p>
 
                     <p style="margin-bottom: 12px;">
-                        <strong>Ihre Aufgabe:</strong>
-                    </p>
-
-                    <p style="margin-bottom: 10px;">
-                        Erstellen Sie ein HTML-Dokument mit einem Formular, das folgende Anforderungen erfüllt:
+                        Ihre Aufgabe:
                     </p>
 
                     <ul style="margin-top:0; margin-bottom:20px; padding-left:22px;">
-                        <li>ein Zahlenfeld für die Menge</li>
-                        <li>ein Dropdown für die Versandart (Standard, Express)</li>
-                        <li>ein Button zum Absenden</li>
-                        <li>alle Eingabefelder sind beschriftet</li>
+                        <li>Erstellen Sie eine Funktion mit dem Namen <strong>zeigeText()</strong>.</li>
+                        <li>Sprechen Sie das <strong>&lt;p&gt;</strong>-Element mit der ID <strong>ausgabe</strong> über JavaScript an (<strong>document.getElementById</strong>).</li>
+                        <li>Verändern Sie den Textinhalt dieses <strong>&lt;p&gt;</strong>-Elements mit <strong>innerHTML</strong>, sodass dort steht: <strong>"Willkommen im Logistikzentrum!"</strong></li>
                     </ul>
-
-                    <p style="margin-bottom: 10px;">Zusätzlich muss das Zahlenfeld:</p>
-
-                    <ul style="margin-top:0; margin-bottom:20px; padding-left:22px;">
-                        <li>ein Pflichtfeld sein</li>
-                        <li>nur Werte zwischen 1 und 100 erlauben</li>
-                        <li>einen Hinweistext enthalten</li>
-                    </ul>
-
-                    <div class="tip-toggle-wrapper" style="margin-bottom:16px;">
-
-                    <button type="button" class="tip-toggle-button">
-                        Tipps einblenden/ausblenden 💡
-                    </button>
-
-                    <div class="tip-toggle-content" style="display:none;">
-                        <p style="margin-top:12px; margin-bottom:10px;">
-                            Beginnen Sie das Formular mit dem <strong>&lt;form&gt;</strong>-Tag und fügen Sie die Eingabefelder Schritt für Schritt ein.
-                        </p>
-
-                        <p style="margin-bottom:10px;">
-                            Ein Dropdown-Menü erstellen Sie mit <strong>&lt;select&gt;</strong> und <strong>&lt;option&gt;</strong>.
-                        </p>
-
-                        <p style="margin-bottom:10px;">
-                            Ein Zahlenfeld wird mit <strong>&lt;input type="number"&gt;</strong> erstellt.
-                        </p>
-
-                        <p style="margin-bottom:10px;">
-                            Beschriftungen fügen Sie mit <strong>&lt;label&gt;</strong> vor den Eingabefeldern hinzu.
-                        </p>
-
-                        <p style="margin-bottom:10px;">
-                            Attribute wie <strong>required</strong>, <strong>min</strong>, <strong>max</strong> und <strong>placeholder</strong>
-                            werden direkt im <strong>&lt;input&gt;</strong>-Tag ergänzt.
-                        </p>
-
-                        <p style="margin-bottom:0;">
-                            Optional: Benutzen Sie im <strong>&lt;input&gt;</strong>-Tag
-                            <strong>style="width: 150px;"</strong>, damit auch ein längerer Hinweistext im Mengenfeld lesbar ist.
-                        </p>
-                    </div>
-                </div>
 
                     <div id="code-task-wrapper" style="display:flex; gap:20px; align-items:flex-start; margin-bottom:16px;">
                         <textarea id="code-input" style="width:50%; height:320px; padding:12px; font-family:monospace; font-size:14px; border:1px solid #ccc; border-radius:6px; resize:vertical;"></textarea>
@@ -239,7 +178,8 @@ const quiz = {
                     <div id="feedback" style="margin-top:12px; font-weight:bold;"></div>
 
                     <div style="font-size:14px; color:#6b8c92; margin-top:10px;">
-                    <strong>Hinweis</strong>: Beim Klick auf <strong>Weiter</strong> geht es zum nächsten Modul. Sie können dann nicht mehr zum jetzigen Modul zurückkehren.
+                        <strong>Hinweis</strong>: Beim Klick auf <strong>Weiter</strong> geht es zum nächsten Modul.
+                        Sie können dann nicht mehr zum jetzigen Modul zurückkehren.
                     </div>
                 </div>
             `
@@ -299,70 +239,10 @@ function loadQuestion(question, initLoad) {
     showHideContinueButton(question);
 }
 
-//Pop-Ups
-function initTipPopups() {
-    var triggers = document.querySelectorAll(".tip-trigger");
-
-    function closeAllTips() {
-        var existingTips = document.querySelectorAll(".custom-tip-popup");
-        for (var i = 0; i < existingTips.length; i++) {
-            existingTips[i].remove();
-        }
-    }
-
-    for (var i = 0; i < triggers.length; i++) {
-        triggers[i].onclick = function (event) {
-            event.stopPropagation();
-
-            var alreadyOpen = this.parentNode.querySelector(".custom-tip-popup");
-            closeAllTips();
-
-            if (alreadyOpen) {
-                return;
-            }
-
-            var popup = document.createElement("div");
-            popup.className = "custom-tip-popup";
-            popup.textContent = this.getAttribute("data-tip");
-
-            this.parentNode.appendChild(popup);
-        };
-    }
-
-    document.addEventListener("click", function () {
-        closeAllTips();
-    });
-}
-
-//Hints 
-function initTipToggles() {
-    var buttons = document.querySelectorAll(".tip-toggle-button");
-
-    for (var i = 0; i < buttons.length; i++) {
-        buttons[i].onclick = function () {
-            var wrapper = this.parentNode;
-            var content = wrapper.querySelector(".tip-toggle-content");
-
-            if (!content) {
-                return;
-            }
-
-            if (content.style.display === "none" || content.style.display === "") {
-                content.style.display = "block";
-            } else {
-                content.style.display = "none";
-            }
-        };
-    }
-}
-
 // Rendert eine Inhaltsseite und initialisiert bei Bedarf die Code-Aufgabe.
 function loadContentPage(question) {
     var quizQuestionTextDIV = document.getElementById("quiz-question-text-container");
     quizQuestionTextDIV.innerHTML = question.content;
-
-    initTipPopups();
-    initTipToggles();
 
     if (document.getElementById("run-code")) {
         initCodeTask(question);
@@ -426,7 +306,6 @@ function cr_QuizQuestionText(question) {
     quizQuestionTextSPAN.innerText = question;
     quizQuestionTextDIV.appendChild(quizQuestionTextSPAN);
 
-    // Hinweis
     let hint = document.createElement("p");
     hint.innerText = "Hinweis: Diese Frage kann nur einmal beantwortet werden.";
     hint.style.fontSize = "13px";
@@ -616,10 +495,10 @@ function showHideContinueButton(question) {
 async function loadNewQuestion(adjustment) {
     var currentQuestion = quiz.questions[currentQuestionIndex];
 
-    // Wenn auf der letzten Seite von Modul B auf "Weiter" geklickt wird,
-    // direkt zu Modul C wechseln
+    // Wenn auf der letzten Seite von Modul E auf "Weiter" geklickt wird,
+    // direkt zu Modul F wechseln
     if (adjustment === "next-question-load" && currentQuestionIndex === quiz.questions.length - 1) {
-        window.location.href = "modul-c.html";
+        window.location.href = "modul-f.html";
         return;
     }
 
@@ -638,7 +517,7 @@ async function loadNewQuestion(adjustment) {
 
                 await trackEvent({
                     event_type: "quiz_answer",
-                    page: "modul_b",
+                    page: "modul_e",
                     question_id: currentQuestion.id,
                     is_correct: isCorrect,
                     attempts: currentQuestion.attempts,

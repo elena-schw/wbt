@@ -1,5 +1,5 @@
 const quiz = {
-    name: "Modul B: Erweiterte HTML-Strukturen und Formulare",
+    name: "Modul D: CSS Layout mit Flexbox",
     questions: [
         {
             type: "content",
@@ -7,125 +7,142 @@ const quiz = {
             content: `
                 <div style="color:#35646b;">
                     <h2 style="color: rgb(56, 189, 207); margin-bottom: 16px;">
-                        Modul B: Erweiterte HTML-Strukturen und Formulare
+                        Modul D: CSS Layout mit Flexbox
                     </h2>
 
                     <p style="font-size:16px; margin-bottom:22px;">
-                        In diesem Modul vertiefen Sie Ihre HTML-Kenntnisse. Sie lernen, wie Formulare aufgebaut werden
-                        und wie Eingaben bereits mit HTML überprüft werden können.
+                        In diesem Modul lernen Sie, wie Webseiten strukturiert angeordnet werden können.
+                        Sie verwenden Flexbox, um Inhalte flexibel und übersichtlich zu positionieren.
                     </p>
 
                     <h3 style="color: rgb(56, 189, 207); margin-bottom: 12px;">
-                        1. Theorie: Erweiterte HTML-Konzepte
+                        1. Theorie: Layout mit Flexbox
                     </h3>
 
-                    <h4 style="margin-bottom: 8px;">Formulare und Eingabeelemente</h4>
+                    <h4 style="margin-bottom: 8px;">Vom einfachen Styling zum Layout</h4>
 
                     <p style="margin-bottom: 14px;">
-                        Formulare dienen dazu, Eingaben von Nutzern zu erfassen. Sie werden mit dem
-                        <strong>&lt;form&gt;</strong>-Element definiert und enthalten verschiedene Eingabefelder.
+                        Während CSS bisher vor allem zur Gestaltung (Farben, Schrift, Abstände) genutzt wurde,
+                        ermöglicht es auch die Anordnung von Elementen auf der Seite. Ein Layout bestimmt,
+                        wo Inhalte auf der Seite erscheinen und wie sie zueinander angeordnet sind.
+                    </p>
+
+                    <h4 style="margin-bottom: 8px;">Flexbox</h4>
+
+                    <p style="margin-bottom: 8px;">
+                        Flexbox ist ein Layout-Modell, mit dem Elemente in einer Reihe oder Spalte angeordnet werden können.
                     </p>
 
                     <p style="margin-bottom: 8px;">
-                        Wichtige Elemente sind:
+                        Dazu wird ein Container als Flex-Container definiert:
                     </p>
 
-                    <pre style="background:#ffffff; padding:12px; border-radius:6px; color:#2d6c75; overflow-x:auto; margin-bottom:8px;"><code>&lt;input type="text"&gt;
-&lt;input type="number"&gt;
-&lt;button&gt;Absenden&lt;/button&gt;</code></pre>
+                    <pre style="background:#ffffff; padding:12px; border-radius:6px; color:#2d6c75; overflow-x:auto; margin-bottom:16px;"><code>.container {
+    display: flex;
+}</code></pre>
+
+                    <p style="margin-bottom: 16px;">
+                        Alle Elemente innerhalb dieses Containers werden automatisch nebeneinander angeordnet.
+                    </p>
 
                     <p style="margin-bottom: 16px;">
                         <span class="tip-popup-wrapper">
-                            <button type="button" class="tip-trigger" data-tip="Das Attribut type bestimmt, welche Art von Eingabe möglich ist, z. B. Text oder Zahlen.">
-                                Mehr zum Attribut <strong>type</strong>
+                            <button type="button" class="tip-trigger" data-tip="Nur das direkte Elternelement wird zum Flex-Container. Die enthaltenen Elemente (Kinder) werden automatisch zu Flex-Elementen.">
+                                Mehr zu Flex-Containern
                             </button>
                         </span>
                     </p>
 
-                    <p style="margin-bottom: 16px;">
-                        Diese ermöglichen die Eingabe und Übermittlung von Daten.
-                    </p>
-
-                    <h4 style="margin-bottom: 8px;">Beschriftung von Eingabefeldern</h4>
+                    <h4 style="margin-bottom: 8px;">Selektoren: Klassen und IDs</h4>
 
                     <p style="margin-bottom: 8px;">
-                        Damit Formulare verständlich sind, sollten Eingabefelder beschriftet werden.
-                        Dafür wird das <strong>&lt;label&gt;</strong>-Element verwendet:
+                        Damit Flexbox gezielt auf bestimmte Bereiche angewendet werden kann, müssen diese Elemente
+                        im CSS eindeutig angesprochen werden. Dazu werden sogenannte Selektoren verwendet.
+                        Neben allgemeinen Selektoren wie <strong>p</strong> oder <strong>div</strong>
+                        können auch Klassen und IDs genutzt werden.
                     </p>
-
-                    <pre style="background:#ffffff; padding:12px; border-radius:6px; color:#2d6c75; overflow-x:auto; margin-bottom:16px;"><code>&lt;label&gt;Menge:&lt;/label&gt;
-&lt;input type="number"&gt;</code></pre>
-
-                    <h4 style="margin-bottom: 8px;">Auswahlfelder (Dropdowns)</h4>
-
-                    <p style="margin-bottom: 8px;">
-                        Für vorgegebene Optionen wird das <strong>&lt;select&gt;</strong>-Element genutzt:
-                    </p>
-
-                    <pre style="background:#ffffff; padding:12px; border-radius:6px; color:#2d6c75; overflow-x:auto; margin-bottom:16px;"><code>&lt;select&gt;
-  &lt;option&gt;Standard&lt;/option&gt;
-  &lt;option&gt;Express&lt;/option&gt;
-&lt;/select&gt;</code></pre>
 
                     <p style="margin-bottom: 16px;">
-                        So kann der Nutzer gezielt aus festen Werten wählen.
+                        Klassen (<strong>class</strong>) können mehrfach auf einer Seite verwendet werden,
+                        während IDs (<strong>id</strong>) eindeutig sind und nur einmal vorkommen sollten.
+                        Im CSS werden Klassen mit einem Punkt (<strong>.</strong>) und IDs mit einer Raute
+                        (<strong>#</strong>) angesprochen.
                     </p>
-
-                    <h4 style="margin-bottom: 8px;">Pflichtfelder und Validierung</h4>
-
-                    <p style="margin-bottom: 8px;">
-                        HTML ermöglicht einfache Eingabeprüfungen ohne JavaScript.
-                    </p>
-
-                    <p style="margin-bottom: 8px;">
-                        Mit dem Attribut <strong>required</strong> wird ein Feld als Pflichtfeld definiert:
-                    </p>
-
-                    <pre style="background:#ffffff; padding:12px; border-radius:6px; color:#2d6c75; overflow-x:auto; margin-bottom:16px;"><code>&lt;input type="number" required&gt;</code></pre>
 
                     <p style="margin-bottom: 16px;">
-                        Der Browser verhindert das Absenden des Formulars, solange das Feld leer ist.
+                        <span class="tip-popup-wrapper">
+                            <button type="button" class="tip-trigger" data-tip="IDs haben eine höhere Priorität als Klassen. Wenn beide auf ein Element angewendet werden, setzt sich die ID durch.">
+                                Mehr zu Klassen und IDs
+                            </button>
+                        </span>
                     </p>
 
+                    <h4 style="margin-bottom: 8px;">Richtung der Anordnung</h4>
+
                     <p style="margin-bottom: 8px;">
-                        Zusätzlich können Eingaben eingeschränkt werden:
+                        Mit der Eigenschaft <strong>flex-direction</strong> kann festgelegt werden,
+                        wie die Elemente angeordnet werden:
+                    </p>
+
+                    <pre style="background:#ffffff; padding:12px; border-radius:6px; color:#2d6c75; overflow-x:auto; margin-bottom:16px;"><code>.container {
+    display: flex;
+    flex-direction: row;
+}</code></pre>
+
+                    <ul style="margin-top:0; margin-bottom:16px; padding-left:22px;">
+                        <li><strong>row</strong> → Elemente nebeneinander (Standard)</li>
+                        <li><strong>column</strong> → Elemente untereinander</li>
+                    </ul>
+
+                    <h4 style="margin-bottom: 8px;">Abstände und Ausrichtung</h4>
+
+                    <p style="margin-bottom: 8px;">
+                        Flexbox bietet einfache Möglichkeiten zur Ausrichtung von Elementen:
+                    </p>
+
+                    <pre style="background:#ffffff; padding:12px; border-radius:6px; color:#2d6c75; overflow-x:auto; margin-bottom:16px;"><code>.container {
+    display: flex;
+    justify-content: space-between;
+}</code></pre>
+
+                    <ul style="margin-top:0; margin-bottom:16px; padding-left:22px;">
+                        <li><strong>justify-content</strong> → Verteilung der Elemente (horizontal)</li>
+                    </ul>
+                    
+                    <p style="margin-bottom: 8px;"><strong>Typische Werte:</strong></p>
+
+                    <ul style="margin-top:0; margin-bottom:16px; padding-left:22px;">
+                        <li><strong>flex-start</strong> → linksbündig</li>
+                        <li><strong>center</strong> → zentriert</li>
+                        <li><strong>space-between</strong> → gleichmäßiger Abstand</li>
+                    </ul>
+
+                    <h4 style="margin-bottom: 8px;">Flexbox für Seitenlayouts</h4>
+
+                    <p style="margin-bottom: 8px;">
+                        Mit Flexbox können einfache Layouts erstellt werden, z. B.:
                     </p>
 
                     <ul style="margin-top:0; margin-bottom:16px; padding-left:22px;">
-                        <li><strong>min / max</strong> → Wertebereich festlegen</li>
-                        <li><strong>placeholder</strong> → Hinweistext anzeigen</li>
+                        <li>Kopfbereich (Header)</li>
+                        <li>Inhaltsbereiche nebeneinander</li>
+                        <li>Fußbereich (Footer)</li>
                     </ul>
 
-                    <p style="margin-bottom: 8px;">
-                        Beispiel:
+                    <p>
+                        Dies ermöglicht eine klare und flexible Struktur von Webseiten.
                     </p>
-
-                    <pre style="background:#ffffff; padding:12px; border-radius:6px; color:#2d6c75; overflow-x:auto; margin-bottom:16px;"><code>&lt;input type="number" max="100" placeholder="Menge eingeben"&gt;</code></pre>
                 </div>
             `
         },
         {
-            id: "modul_b_q1",
+            id: "modul_d_q1",
             type: "single",
-            question: "Frage 1: Welches Attribut sorgt dafür, dass ein Eingabefeld ausgefüllt werden muss?",
+            question: "Frage 1: Welche Eigenschaft aktiviert Flexbox?",
             answers: [
-                "placeholder",
-                "required",
-                "checked"
-            ],
-            entered: [],
-            correct: "B",
-            locked: false,
-            attempts: 0
-        },
-        {
-            id: "modul_b_q2",
-            type: "single",
-            question: "Frage 2: Was bewirkt das Attribut max=\"100\"?",
-            answers: [
-                "Es begrenzt den maximal erlaubten Wert",
-                "Es löscht das Eingabefeld",
-                "Es macht das Feld optional"
+                "display: flex",
+                "position: flex",
+                "flex: display"
             ],
             entered: [],
             correct: "A",
@@ -133,13 +150,27 @@ const quiz = {
             attempts: 0
         },
         {
-            id: "modul_b_q3",
+            id: "modul_d_q2",
             type: "single",
-            question: "Frage 3: Welches Element wird für Auswahlmenüs verwendet?",
+            question: "Frage 2: Was bewirkt flex-direction: column?",
             answers: [
-                "<input>",
-                "<select>",
-                "<div>"
+                "Elemente werden untereinander angeordnet",
+                "Elemente werden nebeneinander angeordnet",
+                "Elemente werden ausgeblendet"
+            ],
+            entered: [],
+            correct: "A",
+            locked: false,
+            attempts: 0
+        },
+        {
+            id: "modul_d_q3",
+            type: "single",
+            question: "Frage 3: Wofür wird justify-content verwendet?",
+            answers: [
+                "Steuert den Abstand innerhalb einzelner Elemente",
+                "Verteilt die Elemente entlang der Hauptachse im Container",
+                "Legt die Ausrichtung entlang der Querachse fest"
             ],
             entered: [],
             correct: "B",
@@ -147,9 +178,9 @@ const quiz = {
             attempts: 0
         },
         {
-            id: "modul_b_code",
-            page: "modul_b",
-            taskType: "modul_b_form",
+            id: "modul_d_code",
+            page: "modul_d",
+            taskType: "modul_d_flexbox",
             type: "content",
             entered: ["gesehen"],
             codeAttempts: 0,
@@ -161,8 +192,8 @@ const quiz = {
 
                     <p style="margin-bottom: 12px;">
                         <strong>Szenario:</strong>
-                        Ein Logistikunternehmen möchte ein Bestellformular erstellen, in dem Nutzer eine Produktmenge eingeben
-                        und eine Versandart auswählen können.
+                        Ein Logistikunternehmen möchte seine Webseite strukturieren, sodass mehrere Inhaltsbereiche
+                        übersichtlich nebeneinander dargestellt werden.
                     </p>
 
                     <p style="margin-bottom: 12px;">
@@ -175,58 +206,54 @@ const quiz = {
                     </p>
 
                     <p style="margin-bottom: 10px;">
-                        Erstellen Sie ein HTML-Dokument mit einem Formular, das folgende Anforderungen erfüllt:
+                        Ergänzen Sie die passenden CSS-Regeln, sodass:
                     </p>
 
                     <ul style="margin-top:0; margin-bottom:20px; padding-left:22px;">
-                        <li>ein Zahlenfeld für die Menge</li>
-                        <li>ein Dropdown für die Versandart (Standard, Express)</li>
-                        <li>ein Button zum Absenden</li>
-                        <li>alle Eingabefelder sind beschriftet</li>
+                        <li>der äußere Container als Flexbox dargestellt wird</li>
+                        <li>die enthaltenen Bereiche nebeneinander angeordnet sind</li>
+                        <li>zwischen den Bereichen gleichmäßiger Abstand entsteht</li>
                     </ul>
 
-                    <p style="margin-bottom: 10px;">Zusätzlich muss das Zahlenfeld:</p>
+                    <p style="margin-bottom: 10px;">
+                        Zusätzlich sollen die einzelnen Bereiche unterschiedlich eingefärbt werden:
+                    </p>
 
                     <ul style="margin-top:0; margin-bottom:20px; padding-left:22px;">
-                        <li>ein Pflichtfeld sein</li>
-                        <li>nur Werte zwischen 1 und 100 erlauben</li>
-                        <li>einen Hinweistext enthalten</li>
+                        <li>Bereich 1 (<strong>#b1</strong>) → braune Schriftfarbe (<strong>brown</strong>)</li>
+                        <li>Bereich 2 (<strong>#b2</strong>) → grüne Schriftfarbe (<strong>green</strong>)</li>
+                        <li>Bereich 3 (<strong>#b3</strong>) → blaue Schriftfarbe (<strong>blue</strong>)</li>
                     </ul>
 
                     <div class="tip-toggle-wrapper" style="margin-bottom:16px;">
+                        <button type="button" class="tip-toggle-button">
+                            Tipps einblenden/ausblenden 💡
+                        </button>
 
-                    <button type="button" class="tip-toggle-button">
-                        Tipps einblenden/ausblenden 💡
-                    </button>
+                        <div class="tip-toggle-content" style="display:none;">
+                            <p style="margin-top:12px; margin-bottom:10px;">
+                                CSS-Regeln definiert man im <strong>&lt;style&gt;</strong>-Block.
+                                Konzentrieren Sie sich zuerst auf den äußeren Container
+                                <strong>.container</strong>.
+                            </p>
 
-                    <div class="tip-toggle-content" style="display:none;">
-                        <p style="margin-top:12px; margin-bottom:10px;">
-                            Beginnen Sie das Formular mit dem <strong>&lt;form&gt;</strong>-Tag und fügen Sie die Eingabefelder Schritt für Schritt ein.
-                        </p>
+                            <p style="margin-bottom:10px;">
+                                Damit die Bereiche nebeneinander stehen, muss der Container
+                                <strong>display: flex;</strong> haben.
+                            </p>
 
-                        <p style="margin-bottom:10px;">
-                            Ein Dropdown-Menü erstellen Sie mit <strong>&lt;select&gt;</strong> und <strong>&lt;option&gt;</strong>.
-                        </p>
+                            <p style="margin-bottom:10px;">
+                                Den Abstand zwischen den Elementen steuern Sie mit
+                                <strong>justify-content</strong>, z. B. <strong>space-between</strong>
+                                für gleichmäßige Abstände.
+                            </p>
 
-                        <p style="margin-bottom:10px;">
-                            Ein Zahlenfeld wird mit <strong>&lt;input type="number"&gt;</strong> erstellt.
-                        </p>
-
-                        <p style="margin-bottom:10px;">
-                            Beschriftungen fügen Sie mit <strong>&lt;label&gt;</strong> vor den Eingabefeldern hinzu.
-                        </p>
-
-                        <p style="margin-bottom:10px;">
-                            Attribute wie <strong>required</strong>, <strong>min</strong>, <strong>max</strong> und <strong>placeholder</strong>
-                            werden direkt im <strong>&lt;input&gt;</strong>-Tag ergänzt.
-                        </p>
-
-                        <p style="margin-bottom:0;">
-                            Optional: Benutzen Sie im <strong>&lt;input&gt;</strong>-Tag
-                            <strong>style="width: 150px;"</strong>, damit auch ein längerer Hinweistext im Mengenfeld lesbar ist.
-                        </p>
+                            <p style="margin-bottom:0;">
+                                Farben können Sie über die IDs mit <strong>#b1</strong>,
+                                <strong>#b2</strong> und <strong>#b3</strong> festlegen.
+                            </p>
+                        </div>
                     </div>
-                </div>
 
                     <div id="code-task-wrapper" style="display:flex; gap:20px; align-items:flex-start; margin-bottom:16px;">
                         <textarea id="code-input" style="width:50%; height:320px; padding:12px; font-family:monospace; font-size:14px; border:1px solid #ccc; border-radius:6px; resize:vertical;"></textarea>
@@ -299,7 +326,7 @@ function loadQuestion(question, initLoad) {
     showHideContinueButton(question);
 }
 
-//Pop-Ups
+// Pop-Ups
 function initTipPopups() {
     var triggers = document.querySelectorAll(".tip-trigger");
 
@@ -334,7 +361,7 @@ function initTipPopups() {
     });
 }
 
-//Hints 
+// Tipps
 function initTipToggles() {
     var buttons = document.querySelectorAll(".tip-toggle-button");
 
@@ -426,7 +453,6 @@ function cr_QuizQuestionText(question) {
     quizQuestionTextSPAN.innerText = question;
     quizQuestionTextDIV.appendChild(quizQuestionTextSPAN);
 
-    // Hinweis
     let hint = document.createElement("p");
     hint.innerText = "Hinweis: Diese Frage kann nur einmal beantwortet werden.";
     hint.style.fontSize = "13px";
@@ -616,10 +642,10 @@ function showHideContinueButton(question) {
 async function loadNewQuestion(adjustment) {
     var currentQuestion = quiz.questions[currentQuestionIndex];
 
-    // Wenn auf der letzten Seite von Modul B auf "Weiter" geklickt wird,
-    // direkt zu Modul C wechseln
+    // Wenn auf der letzten Seite von Modul D auf "Weiter" geklickt wird,
+    // direkt zu Modul E wechseln
     if (adjustment === "next-question-load" && currentQuestionIndex === quiz.questions.length - 1) {
-        window.location.href = "modul-c.html";
+        window.location.href = "modul-e.html";
         return;
     }
 
@@ -638,7 +664,7 @@ async function loadNewQuestion(adjustment) {
 
                 await trackEvent({
                     event_type: "quiz_answer",
-                    page: "modul_b",
+                    page: "modul_d",
                     question_id: currentQuestion.id,
                     is_correct: isCorrect,
                     attempts: currentQuestion.attempts,

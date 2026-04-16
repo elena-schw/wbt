@@ -1,5 +1,5 @@
 const quiz = {
-    name: "Modul B: Erweiterte HTML-Strukturen und Formulare",
+    name: "Modul F: JavaScript Logik",
     questions: [
         {
             type: "content",
@@ -7,111 +7,139 @@ const quiz = {
             content: `
                 <div style="color:#35646b;">
                     <h2 style="color: rgb(56, 189, 207); margin-bottom: 16px;">
-                        Modul B: Erweiterte HTML-Strukturen und Formulare
+                        Modul F: JavaScript Logik
                     </h2>
 
                     <p style="font-size:16px; margin-bottom:22px;">
-                        In diesem Modul vertiefen Sie Ihre HTML-Kenntnisse. Sie lernen, wie Formulare aufgebaut werden
-                        und wie Eingaben bereits mit HTML überprüft werden können.
+                        In diesem Modul lernen Sie, wie Entscheidungen und Wiederholungen in JavaScript umgesetzt werden.
+                        Dadurch können Programme auf Eingaben reagieren und komplexere Aufgaben lösen.
                     </p>
 
                     <h3 style="color: rgb(56, 189, 207); margin-bottom: 12px;">
-                        1. Theorie: Erweiterte HTML-Konzepte
+                        1. Theorie: Logik in JavaScript
                     </h3>
 
-                    <h4 style="margin-bottom: 8px;">Formulare und Eingabeelemente</h4>
-
-                    <p style="margin-bottom: 14px;">
-                        Formulare dienen dazu, Eingaben von Nutzern zu erfassen. Sie werden mit dem
-                        <strong>&lt;form&gt;</strong>-Element definiert und enthalten verschiedene Eingabefelder.
-                    </p>
+                    <h4 style="margin-bottom: 8px;">Eingaben verarbeiten</h4>
 
                     <p style="margin-bottom: 8px;">
-                        Wichtige Elemente sind:
+                        JavaScript kann Werte aus Eingabefeldern auslesen und weiterverarbeiten.
                     </p>
 
-                    <pre style="background:#ffffff; padding:12px; border-radius:6px; color:#2d6c75; overflow-x:auto; margin-bottom:8px;"><code>&lt;input type="text"&gt;
-&lt;input type="number"&gt;
-&lt;button&gt;Absenden&lt;/button&gt;</code></pre>
+                    <pre style="background:#ffffff; padding:12px; border-radius:6px; color:#2d6c75; overflow-x:auto; margin-bottom:16px;"><code>let wert = document.getElementById("eingabe").value;</code></pre>
+
+                    <p style="margin-bottom: 16px;">
+                        Damit wird der eingegebene Wert eines Feldes (mit der ID "eingabe") gelesen und in einer Variable gespeichert.
+                    </p>
+
+                    <h4 style="margin-bottom: 8px;">Bedingungen (if-Abfragen)</h4>
+
+                    <p style="margin-bottom: 8px;">
+                        Mit Bedingungen kann überprüft werden, ob bestimmte Anforderungen erfüllt sind.
+                    </p>
+
+                    <pre style="background:#ffffff; padding:12px; border-radius:6px; color:#2d6c75; overflow-x:auto; margin-bottom:16px;"><code>if (wert > 100) {
+    alert("Wert zu groß");
+}</code></pre>
+
+                    <p style="margin-bottom: 16px;">
+                        Eine if-Abfrage führt Code nur dann aus, wenn die Bedingung erfüllt ist.
+                    </p>
+
+                    <p style="margin-bottom: 8px;"><strong>Typische Vergleiche:</strong></p>
+
+                    <ul style="margin-top:0; margin-bottom:16px; padding-left:22px;">
+                        <li><strong>&gt;</strong> größer als</li>
+                        <li><strong>&lt;</strong> kleiner als</li>
+                        <li><strong>==</strong> gleich</li>
+                    </ul>
+
+                    <h4 style="margin-bottom: 8px;">Mehrere Fälle (if / else)</h4>
+
+                    <p style="margin-bottom: 8px;">
+                        Oft gibt es mehrere mögliche Ergebnisse:
+                    </p>
+
+                    <pre style="background:#ffffff; padding:12px; border-radius:6px; color:#2d6c75; overflow-x:auto; margin-bottom:16px;"><code>if (wert >= 1 && wert <= 100) {
+    alert("Eingabe gültig");
+} else {
+    alert("Ungültige Eingabe");
+}</code></pre>
+
+                    <p style="margin-bottom: 16px;">
+                        Damit kann zwischen gültigen und ungültigen Eingaben unterschieden werden.
+                    </p>
+
+                    <h4 style="margin-bottom: 8px;">Verknüpfung von Bedingungen</h4>
+
+                    <p style="margin-bottom: 8px;">
+                        Mehrere Bedingungen können miteinander kombiniert werden:
+                    </p>
+
+                    <ul style="margin-top:0; margin-bottom:16px; padding-left:22px;">
+                        <li><strong>&&</strong> (UND) → beide Bedingungen müssen erfüllt sein</li>
+                        <li><strong>||</strong> (ODER) → mindestens eine Bedingung muss erfüllt sein</li>
+                    </ul>
+
+                    <p style="margin-bottom: 8px;">Beispiel:</p>
+
+                    <pre style="background:#ffffff; padding:12px; border-radius:6px; color:#2d6c75; overflow-x:auto; margin-bottom:16px;"><code>if (wert >= 1 && wert <= 100) {
+    // gültiger Bereich
+}</code></pre>
+
+                    <p style="margin-bottom: 16px;">
+                        Hier muss der Wert gleichzeitig größer oder gleich 1 und kleiner oder gleich 100 sein.
+                    </p>
 
                     <p style="margin-bottom: 16px;">
                         <span class="tip-popup-wrapper">
-                            <button type="button" class="tip-trigger" data-tip="Das Attribut type bestimmt, welche Art von Eingabe möglich ist, z. B. Text oder Zahlen.">
-                                Mehr zum Attribut <strong>type</strong>
+                            <button type="button" class="tip-trigger" data-tip="Achten Sie darauf, dass beide Bedingungen richtig formuliert sind. Schon ein falscher Vergleichsoperator kann dazu führen, dass immer das gleiche Ergebnis ausgegeben wird.">
+                                Mehr zu Bedingungen
                             </button>
                         </span>
                     </p>
 
-                    <p style="margin-bottom: 16px;">
-                        Diese ermöglichen die Eingabe und Übermittlung von Daten.
-                    </p>
-
-                    <h4 style="margin-bottom: 8px;">Beschriftung von Eingabefeldern</h4>
+                    <h4 style="margin-bottom: 8px;">Schleifen (while)</h4>
 
                     <p style="margin-bottom: 8px;">
-                        Damit Formulare verständlich sind, sollten Eingabefelder beschriftet werden.
-                        Dafür wird das <strong>&lt;label&gt;</strong>-Element verwendet:
+                        Schleifen werden verwendet, um Code mehrfach auszuführen.
                     </p>
 
-                    <pre style="background:#ffffff; padding:12px; border-radius:6px; color:#2d6c75; overflow-x:auto; margin-bottom:16px;"><code>&lt;label&gt;Menge:&lt;/label&gt;
-&lt;input type="number"&gt;</code></pre>
+                    <pre style="background:#ffffff; padding:12px; border-radius:6px; color:#2d6c75; overflow-x:auto; margin-bottom:16px;"><code>let i = 0;
 
-                    <h4 style="margin-bottom: 8px;">Auswahlfelder (Dropdowns)</h4>
-
-                    <p style="margin-bottom: 8px;">
-                        Für vorgegebene Optionen wird das <strong>&lt;select&gt;</strong>-Element genutzt:
-                    </p>
-
-                    <pre style="background:#ffffff; padding:12px; border-radius:6px; color:#2d6c75; overflow-x:auto; margin-bottom:16px;"><code>&lt;select&gt;
-  &lt;option&gt;Standard&lt;/option&gt;
-  &lt;option&gt;Express&lt;/option&gt;
-&lt;/select&gt;</code></pre>
+while (i < 3) {
+    console.log("Wiederholung");
+    i++;
+}</code></pre>
 
                     <p style="margin-bottom: 16px;">
-                        So kann der Nutzer gezielt aus festen Werten wählen.
+                        Die Schleife wird so lange ausgeführt, bis die Bedingung nicht mehr erfüllt ist.
                     </p>
-
-                    <h4 style="margin-bottom: 8px;">Pflichtfelder und Validierung</h4>
-
-                    <p style="margin-bottom: 8px;">
-                        HTML ermöglicht einfache Eingabeprüfungen ohne JavaScript.
-                    </p>
-
-                    <p style="margin-bottom: 8px;">
-                        Mit dem Attribut <strong>required</strong> wird ein Feld als Pflichtfeld definiert:
-                    </p>
-
-                    <pre style="background:#ffffff; padding:12px; border-radius:6px; color:#2d6c75; overflow-x:auto; margin-bottom:16px;"><code>&lt;input type="number" required&gt;</code></pre>
 
                     <p style="margin-bottom: 16px;">
-                        Der Browser verhindert das Absenden des Formulars, solange das Feld leer ist.
+                        <span class="tip-popup-wrapper">
+                            <button type="button" class="tip-trigger" data-tip="Wenn die Bedingung in der Schleife nie falsch wird, entsteht eine Endlosschleife. Das Programm bleibt dann hängen.">
+                                Mehr zu while-Schleifen
+                            </button>
+                        </span>
                     </p>
 
-                    <p style="margin-bottom: 8px;">
-                        Zusätzlich können Eingaben eingeschränkt werden:
+                    <h4 style="margin-bottom: 8px;">Kombination von Logik und Ausgabe</h4>
+
+                    <p>
+                        Bedingungen und Schleifen können kombiniert werden, um Inhalte dynamisch zu erzeugen
+                        oder Eingaben zu überprüfen.
                     </p>
-
-                    <ul style="margin-top:0; margin-bottom:16px; padding-left:22px;">
-                        <li><strong>min / max</strong> → Wertebereich festlegen</li>
-                        <li><strong>placeholder</strong> → Hinweistext anzeigen</li>
-                    </ul>
-
-                    <p style="margin-bottom: 8px;">
-                        Beispiel:
-                    </p>
-
-                    <pre style="background:#ffffff; padding:12px; border-radius:6px; color:#2d6c75; overflow-x:auto; margin-bottom:16px;"><code>&lt;input type="number" max="100" placeholder="Menge eingeben"&gt;</code></pre>
                 </div>
             `
         },
         {
-            id: "modul_b_q1",
+            id: "modul_f_q1",
             type: "single",
-            question: "Frage 1: Welches Attribut sorgt dafür, dass ein Eingabefeld ausgefüllt werden muss?",
+            question: "Frage 1: Welche Bedingung prüft korrekt, ob ein Wert zwischen 1 und 100 liegt?",
             answers: [
-                "placeholder",
-                "required",
-                "checked"
+                "wert > 1 || wert < 100",
+                "wert >= 1 && wert <= 100",
+                "wert = 1 && 100"
             ],
             entered: [],
             correct: "B",
@@ -119,13 +147,27 @@ const quiz = {
             attempts: 0
         },
         {
-            id: "modul_b_q2",
+            id: "modul_f_q2",
             type: "single",
-            question: "Frage 2: Was bewirkt das Attribut max=\"100\"?",
+            question: "Frage 2: Was passiert im else-Block?",
             answers: [
-                "Es begrenzt den maximal erlaubten Wert",
-                "Es löscht das Eingabefeld",
-                "Es macht das Feld optional"
+                "Der Code wird immer ausgeführt",
+                "Der Code wird vor der if-Bedingung ausgeführt",
+                "Der Code wird nur ausgeführt, wenn die Bedingung nicht erfüllt ist"
+            ],
+            entered: [],
+            correct: "C",
+            locked: false,
+            attempts: 0
+        },
+        {
+            id: "modul_f_q3",
+            type: "single",
+            question: "Frage 3: Wie kann der Wert eines Eingabefeldes mit der ID „menge“ ausgelesen werden?",
+            answers: [
+                'document.getElementById("menge").value',
+                'document.getElement("menge")',
+                'getValue("menge")'
             ],
             entered: [],
             correct: "A",
@@ -133,23 +175,9 @@ const quiz = {
             attempts: 0
         },
         {
-            id: "modul_b_q3",
-            type: "single",
-            question: "Frage 3: Welches Element wird für Auswahlmenüs verwendet?",
-            answers: [
-                "<input>",
-                "<select>",
-                "<div>"
-            ],
-            entered: [],
-            correct: "B",
-            locked: false,
-            attempts: 0
-        },
-        {
-            id: "modul_b_code",
-            page: "modul_b",
-            taskType: "modul_b_form",
+            id: "modul_f_code",
+            page: "modul_f",
+            taskType: "modul_f_logic",
             type: "content",
             entered: ["gesehen"],
             codeAttempts: 0,
@@ -161,8 +189,7 @@ const quiz = {
 
                     <p style="margin-bottom: 12px;">
                         <strong>Szenario:</strong>
-                        Ein Logistikunternehmen möchte ein Bestellformular erstellen, in dem Nutzer eine Produktmenge eingeben
-                        und eine Versandart auswählen können.
+                        Ein Logistikunternehmen möchte prüfen, ob eine eingegebene Bestellmenge gültig ist.
                     </p>
 
                     <p style="margin-bottom: 12px;">
@@ -175,58 +202,40 @@ const quiz = {
                     </p>
 
                     <p style="margin-bottom: 10px;">
-                        Erstellen Sie ein HTML-Dokument mit einem Formular, das folgende Anforderungen erfüllt:
+                        Ergänzen Sie den JavaScript-Code mit der Funktion <strong>pruefen()</strong>, sodass:
                     </p>
 
                     <ul style="margin-top:0; margin-bottom:20px; padding-left:22px;">
-                        <li>ein Zahlenfeld für die Menge</li>
-                        <li>ein Dropdown für die Versandart (Standard, Express)</li>
-                        <li>ein Button zum Absenden</li>
-                        <li>alle Eingabefelder sind beschriftet</li>
-                    </ul>
-
-                    <p style="margin-bottom: 10px;">Zusätzlich muss das Zahlenfeld:</p>
-
-                    <ul style="margin-top:0; margin-bottom:20px; padding-left:22px;">
-                        <li>ein Pflichtfeld sein</li>
-                        <li>nur Werte zwischen 1 und 100 erlauben</li>
-                        <li>einen Hinweistext enthalten</li>
+                        <li>der Wert aus dem Eingabefeld gelesen und in einer Variable gespeichert wird, z. B. mit <strong>let wert</strong></li>
+                        <li>überprüft wird, ob die Menge zwischen <strong>1</strong> und <strong>100</strong> liegt</li>
+                        <li>wenn die Eingabe gültig ist, wird der Text <strong>„Bestellung möglich“</strong> im <strong>&lt;p&gt;</strong>-Element angezeigt</li>
+                        <li>wenn die Eingabe ungültig ist, wird der Text <strong>„Ungültige Menge“</strong> im <strong>&lt;p&gt;</strong>-Element angezeigt</li>
                     </ul>
 
                     <div class="tip-toggle-wrapper" style="margin-bottom:16px;">
+                        <button type="button" class="tip-toggle-button">
+                            Tipps einblenden/ausblenden 💡
+                        </button>
 
-                    <button type="button" class="tip-toggle-button">
-                        Tipps einblenden/ausblenden 💡
-                    </button>
+                        <div class="tip-toggle-content" style="display:none;">
+                            <p style="margin-top:12px; margin-bottom:10px;">
+                                Lesen Sie den Wert mit <strong>document.getElementById("menge").value</strong> aus
+                                und speichern Sie ihn in einer Variable mit <strong>let</strong>
+                                (z. B. <strong>let wert = ...</strong>).
+                            </p>
 
-                    <div class="tip-toggle-content" style="display:none;">
-                        <p style="margin-top:12px; margin-bottom:10px;">
-                            Beginnen Sie das Formular mit dem <strong>&lt;form&gt;</strong>-Tag und fügen Sie die Eingabefelder Schritt für Schritt ein.
-                        </p>
+                            <p style="margin-bottom:10px;">
+                                Prüfen Sie mit einer <strong>if/else</strong>-Bedingung
+                                (<strong>wert >= 1 && wert <= 100</strong>), ob die Eingabe gültig ist.
+                            </p>
 
-                        <p style="margin-bottom:10px;">
-                            Ein Dropdown-Menü erstellen Sie mit <strong>&lt;select&gt;</strong> und <strong>&lt;option&gt;</strong>.
-                        </p>
-
-                        <p style="margin-bottom:10px;">
-                            Ein Zahlenfeld wird mit <strong>&lt;input type="number"&gt;</strong> erstellt.
-                        </p>
-
-                        <p style="margin-bottom:10px;">
-                            Beschriftungen fügen Sie mit <strong>&lt;label&gt;</strong> vor den Eingabefeldern hinzu.
-                        </p>
-
-                        <p style="margin-bottom:10px;">
-                            Attribute wie <strong>required</strong>, <strong>min</strong>, <strong>max</strong> und <strong>placeholder</strong>
-                            werden direkt im <strong>&lt;input&gt;</strong>-Tag ergänzt.
-                        </p>
-
-                        <p style="margin-bottom:0;">
-                            Optional: Benutzen Sie im <strong>&lt;input&gt;</strong>-Tag
-                            <strong>style="width: 150px;"</strong>, damit auch ein längerer Hinweistext im Mengenfeld lesbar ist.
-                        </p>
+                            <p style="margin-bottom:0;">
+                                Den Text schreiben Sie mit
+                                <strong>document.getElementById("ausgabe").innerHTML</strong>
+                                in das <strong>&lt;p&gt;</strong>-Element.
+                            </p>
+                        </div>
                     </div>
-                </div>
 
                     <div id="code-task-wrapper" style="display:flex; gap:20px; align-items:flex-start; margin-bottom:16px;">
                         <textarea id="code-input" style="width:50%; height:320px; padding:12px; font-family:monospace; font-size:14px; border:1px solid #ccc; border-radius:6px; resize:vertical;"></textarea>
@@ -299,7 +308,7 @@ function loadQuestion(question, initLoad) {
     showHideContinueButton(question);
 }
 
-//Pop-Ups
+// Pop-Ups
 function initTipPopups() {
     var triggers = document.querySelectorAll(".tip-trigger");
 
@@ -334,7 +343,7 @@ function initTipPopups() {
     });
 }
 
-//Hints 
+// Tipps
 function initTipToggles() {
     var buttons = document.querySelectorAll(".tip-toggle-button");
 
@@ -426,7 +435,6 @@ function cr_QuizQuestionText(question) {
     quizQuestionTextSPAN.innerText = question;
     quizQuestionTextDIV.appendChild(quizQuestionTextSPAN);
 
-    // Hinweis
     let hint = document.createElement("p");
     hint.innerText = "Hinweis: Diese Frage kann nur einmal beantwortet werden.";
     hint.style.fontSize = "13px";
@@ -616,10 +624,10 @@ function showHideContinueButton(question) {
 async function loadNewQuestion(adjustment) {
     var currentQuestion = quiz.questions[currentQuestionIndex];
 
-    // Wenn auf der letzten Seite von Modul B auf "Weiter" geklickt wird,
-    // direkt zu Modul C wechseln
+    // Wenn auf der letzten Seite von Modul F auf "Weiter" geklickt wird,
+    // direkt zum Posttest wechseln
     if (adjustment === "next-question-load" && currentQuestionIndex === quiz.questions.length - 1) {
-        window.location.href = "modul-c.html";
+        window.location.href = "../posttest/posttest.html";
         return;
     }
 
@@ -638,7 +646,7 @@ async function loadNewQuestion(adjustment) {
 
                 await trackEvent({
                     event_type: "quiz_answer",
-                    page: "modul_b",
+                    page: "modul_f",
                     question_id: currentQuestion.id,
                     is_correct: isCorrect,
                     attempts: currentQuestion.attempts,
