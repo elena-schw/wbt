@@ -26,6 +26,18 @@ function getParticipantId() {
     return participantId;
 }
 
+function getStudyGroup() {
+    var params = new URLSearchParams(window.location.search);
+    var group = params.get("group");
+
+    if (group) {
+        localStorage.setItem("study_group", group);
+        return group;
+    }
+
+    return localStorage.getItem("study_group") || null;
+}
+
 // Variable zur Speicherung des Startzeitpunkts einer Aufgabe
 let currentTaskStartTime = null;
 
@@ -57,6 +69,9 @@ async function trackEvent(eventData) {
 
         // Teilnehmer-ID (persistent im Browser)
         participant_id: getParticipantId(),
+
+        //Gruppe 1 oder 2 (Linear oder Adaptiv)
+        study_group: getStudyGroup(),
 
         // Art des Events (z. B. quiz_answer, code_attempt)
         event_type: eventData.event_type,

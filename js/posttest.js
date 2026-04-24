@@ -629,7 +629,11 @@ async function finalizePosttest() {
         duration_ms: null
     });
 
-    window.location.href = "../abschluss/abschluss.html";
+    // Veraltet
+    // window.location.href = "../abschluss/abschluss.html";
+    
+    var group = localStorage.getItem("study_group") || new URLSearchParams(window.location.search).get("group") || "1";
+    window.location.href = "../abschluss/abschluss.html?group=" + group;
 }
 
 /* -----------------------------

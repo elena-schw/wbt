@@ -627,7 +627,7 @@ async function loadNewQuestion(adjustment) {
     // Wenn auf der letzten Seite von Modul F auf "Weiter" geklickt wird,
     // direkt zum Posttest wechseln
     if (adjustment === "next-question-load" && currentQuestionIndex === quiz.questions.length - 1) {
-        window.location.href = "../posttest/posttest.html";
+        window.location.href = "../posttest/posttest.html?group=1";
         return;
     }
 
@@ -735,6 +735,21 @@ document.onkeydown = function(evt) {
         loadNewQuestion("next-question-load");
     }
 };
+
+//Steuerung Adaptivität
+/*function goToNextAdaptiveModule() {
+    var path = JSON.parse(localStorage.getItem("adaptive_path") || "[]");
+    var index = parseInt(localStorage.getItem("adaptive_current_index") || "0", 10);
+
+    index++;
+
+    if (index < path.length) {
+        localStorage.setItem("adaptive_current_index", index.toString());
+        window.location.href = path[index] + "?group=2";
+    } else {
+        window.location.href = "../posttest/posttest.html?group=2";
+    }
+} */
 
 // Startet das Modul beim Laden der Datei.
 init();

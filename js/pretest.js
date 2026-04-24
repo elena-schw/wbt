@@ -663,14 +663,43 @@ function getGroup() {
     return params.get("group");
 }
 
+/* Alte Umsetzung obsolet
 function redirectAfterPretest() {
     const group = getGroup();
 
     if (group === "2") {
-        window.location.href = "../wbt2/modul-a.html";
+        window.location.href = "../wbt2/start.html";
     } else {
         window.location.href = "../wbt1/modul-a.html";
     }
+} */
+
+function redirectAfterPretest() {
+    const group = getGroup();
+
+    if (group === "2") {
+        buildAdaptivePath();
+
+        var path = JSON.parse(localStorage.getItem("adaptive_path"));
+        window.location.href = "../wbt2/" + path[0] + "?group=2";
+    } else {
+        window.location.href = "../wbt1/modul-a.html?group=1";
+    }
+}
+
+function buildAdaptivePath() {
+    var htmlLevel = localStorage.getItem("pretest_html_level");
+    var cssLevel = localStorage.getItem("pretest_css_level");
+    var jsLevel = localStorage.getItem("pretest_js_level");
+
+    var path = [];
+
+    path.push(htmlLevel === "advanced" ? "modul-b.html" : "modul-a.html");
+    path.push(cssLevel === "advanced" ? "modul-d.html" : "modul-c.html");
+    path.push(jsLevel === "advanced" ? "modul-f.html" : "modul-e.html");
+
+    localStorage.setItem("adaptive_path", JSON.stringify(path));
+    localStorage.setItem("adaptive_current_index", "0");
 }
 
 init();

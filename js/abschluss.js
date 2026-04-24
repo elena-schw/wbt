@@ -21,7 +21,7 @@ const quiz = {
                     </p>
 
                     <p style="margin-bottom:16px;">
-                        Klicken Sie auf <strong>Weiter</strong>, um zum Fragebogen zu gelangen.
+                        Klicken Sie auf <strong>Weiter</strong>, um zum kurzen Fragebogen zu gelangen.
                     </p>
                 </div>
             `
@@ -83,8 +83,25 @@ function createContinueButton() {
     }
 }
 
+function getCurrentStudyGroup() {
+    var params = new URLSearchParams(window.location.search);
+    var group = params.get("group");
+
+    if (group) {
+        localStorage.setItem("study_group", group);
+        return group;
+    }
+
+    return localStorage.getItem("study_group") || "1";
+}
+
 function redirectToSurvey() {
-    var surveyUrl = "HIER_GOOGLE_FORMS_LINK";
+    var group = getCurrentStudyGroup();
+
+    var linearFormUrl = "https://docs.google.com/forms/d/e/1FAIpQLSeH82CHMGgdcdbEATYrnuH6nxEC7cKzX9B-vLKLmY62NKL-Pw/viewform?usp=dialog";
+    var adaptiveFormUrl = "https://docs.google.com/forms/d/e/1FAIpQLSdTweAY-vRRGH0oasngS4eYE_cQ5jZ3SHHnY-fGGkMuSitLng/viewform?usp=dialog";
+
+    var surveyUrl = group === "2" ? adaptiveFormUrl : linearFormUrl;
 
     try {
         if (typeof trackEvent === "function") {

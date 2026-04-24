@@ -642,12 +642,18 @@ function showHideContinueButton(question) {
 async function loadNewQuestion(adjustment) {
     var currentQuestion = quiz.questions[currentQuestionIndex];
 
-    // Wenn auf der letzten Seite von Modul D auf "Weiter" geklickt wird,
-    // direkt zu Modul E wechseln
+    // Wenn auf der letzten Seite von Modul D auf "Weiter" geklickt wird, direkt zu Modul E (LINEAR) oder adaptive Weiterleitung (group 2)
     if (adjustment === "next-question-load" && currentQuestionIndex === quiz.questions.length - 1) {
+    var group = new URLSearchParams(window.location.search).get("group");
+
+    if (group === "2") {
+        goToNextAdaptiveModule();
+    } else {
         window.location.href = "modul-e.html";
-        return;
     }
+
+    return;
+}
 
     if (adjustment === "next-question-load") {
         if (currentQuestion.type === "single") {
@@ -753,6 +759,21 @@ document.onkeydown = function(evt) {
         loadNewQuestion("next-question-load");
     }
 };
+
+//Steuerung Adaptivität
+function goToNextAdaptiveModule() {
+    var path = JSON.parse(localStorage.getItem("adaptive_path") || "[]");
+    var index = parseInt(localStorage.getItem("adaptive_current_index") || "0", 10);
+
+    index++;
+
+    if (index < path.length) {
+        localStorage.setItem("adaptive_current_index", index.toString());
+        window.location.href = path[index] + "?group=2";
+    } else {
+        window.location.href = "../posttest/posttest.html?group=2";
+    }
+}
 
 // Startet das Modul beim Laden der Datei.
 init();
