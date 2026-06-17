@@ -733,14 +733,15 @@ document.onkeydown = function(evt) {
         selectAnswer(evt.keyCode.toString());
     }
 
-    if (evt.keyCode == 38) {
-        loadNewQuestion("previous-question-load");
-    }
+    //Auskommentiert wegen Usability Problemen bei Code-Editor Aufgabe
+    //if (evt.keyCode == 38) {
+    //    loadNewQuestion("previous-question-load");
+    //}
 
     let type = quiz.questions[currentQuestionIndex].type;
-    if (evt.keyCode == 40 || ((type == "single" || type == "multiple") && evt.keyCode == 13)) {
-        loadNewQuestion("next-question-load");
-    }
+    //if (evt.keyCode == 40 || ((type == "single" || type == "multiple") && evt.keyCode == 13)) {
+    //    loadNewQuestion("next-question-load");
+    //}
 };
 
 //Steuerung Adaptivität
