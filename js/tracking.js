@@ -1,13 +1,13 @@
-// Debug-Ausgabe → zeigt, ob die Datei korrekt geladen wurde
+// TEST Debug-Ausgabe → zeigt, ob die Datei korrekt geladen wurde
 console.log("tracking.js wurde geladen");
 
 // Supabase-Verbindungsdaten
-// URL = dein Backend
-// ANON_KEY = öffentlicher API-Key für Client-Zugriff
+// URL = Backend
+// ANON_KEY = öffentlicher API-Key (Publishable Key) für Client-Zugriff
 const SUPABASE_URL = "https://hbusfmffwxomklstinpu.supabase.co";
 const SUPABASE_ANON_KEY = "sb_publishable_U-JjUYS5OCq1bhI1se6zUQ_1sZiYj8l";
 
-// Supabase-Client initialisieren → zentrale Schnittstelle zur Datenbank
+// Supabase-Client initialisieren stellt zentrale Schnittstelle zur Datenbank her
 const supabaseClient = supabase.createClient(SUPABASE_URL, SUPABASE_ANON_KEY);
 
 // Funktion zur eindeutigen Identifikation eines Teilnehmers
